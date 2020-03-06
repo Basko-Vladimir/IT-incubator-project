@@ -1,0 +1,37 @@
+.header{
+    grid-area: header;
+    background-color: #68a3ff;
+    height: 70px;
+    display: grid;
+    grid-template: 100% / 2fr 4fr 3fr;
+}
+
+.header .logoIcon{
+    align-self: center;
+    justify-self: right;
+    padding-right: 20px;
+    width:40px;
+    height: 40px;
+}
+
+.header .logoIcon img{
+    width: 40px;
+}
+
+.header .logoText{
+    align-self: center;
+}
+
+.header .language{
+    display:grid;
+    grid-template: 1fr/1fr 1fr 1fr 1fr 20%;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
+
+
