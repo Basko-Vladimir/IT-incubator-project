@@ -10,7 +10,10 @@ const Main = () => {
               <div className={styles.contentItem}>Lorem ipsum dolor sit amet.</div>
               <div className={styles.contentItem}>Lorem ipsum dolor sit amet.</div>
               <div className={styles.contentItem}>Lorem ipsum dolor sit amet.</div>
-
+              <div className={styles.contentItem}>Lorem ipsum dolor sit amet.</div>
+              <div className={styles.contentItem}>Lorem ipsum dolor sit amet.</div>
+              <div className={styles.contentItem}>Lorem ipsum dolor sit amet.</div>
+              <div className={styles.contentItem}>Lorem ipsum dolor sit amet.</div>
           </div>
       </div>
   )
