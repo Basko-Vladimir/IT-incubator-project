@@ -7,7 +7,7 @@
 
 .login .loginForm{
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 2fr 2fr 2fr 2fr 1fr;
     justify-content: center;
     align-content: space-evenly;
 }
