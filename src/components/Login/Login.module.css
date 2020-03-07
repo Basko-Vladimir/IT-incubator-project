@@ -1,4 +1,31 @@
 .login{
     grid-area: login;
     background-color: #d7d7d7;
+    display: grid;
+    grid-template-rows: 1fr;
 }
+
+.login .loginForm{
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    justify-content: center;
+    align-content: space-evenly;
+}
+
+.login .loginForm .formHeader{
+    display: grid;
+    justify-content: center;
+    align-content: start;
+    padding-top: 10px;
+}
+
+.login .loginForm .inputs{
+    height: 25px;
+}
+
+.login .loginForm .submitBtn{
+    height: 31px;
+    background-color: #68A3FF;
+    border: none;
+}
+

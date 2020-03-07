@@ -1,5 +1,19 @@
 .navBar{
     grid-area: navbar;
-    background-color: #4fff2e;
-
+    display: grid;
+    align-content: start;
+    padding-top: 30px;
+    background-color: #D7D7D7;
 }
+
+.navBar .navItem{
+    height: 30px;
+    padding-left: 50px;
+}
+
+.navBar .navItem a{
+    text-decoration: none;
+    color: #000000;
+}
+
+
