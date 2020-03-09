@@ -16,4 +16,9 @@
     color: #000000;
 }
 
+.navBar .navItem .activeLink{
+    color:#68A3FF;
+    text-decoration: underline;
+}
+
 

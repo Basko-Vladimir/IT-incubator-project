@@ -1,13 +1,17 @@
 .App {
   display: grid;
   grid-template-areas: "header header"
-                       "login main"
-                       "navbar main";
+                       "login mainBlockWrap"
+                       "navbar mainBlockWrap";
   grid-gap: 5px;
   width:65%;
   margin:0 auto;
   grid-template-columns: 2fr 9fr;
-  grid-template-rows: 70px 200px 1fr;
+  grid-template-rows: 80px 200px 1fr;
+}
+
+.mainBlockWrap {
+    grid-area: mainBlockWrap;
 }
 
 
