@@ -11,6 +11,7 @@ import Dialogs from "./components/Dialogs/Dialogs";
 import Users from "./components/Users/Users";
 import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
+import PhotoBG from "./components/PhotoBG/PhotoBG";
 
 function App() {
     return (
@@ -18,6 +19,7 @@ function App() {
             <Header/>
             <Login/>
             <Navbar/>
+            <PhotoBG />
             <div className='mainBlockWrap'>
                 <Route  path='/home' component={Main} />
                 <Route  path='/profile' component={Profile}/>

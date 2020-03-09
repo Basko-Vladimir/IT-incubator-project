@@ -1,7 +1,7 @@
 .App {
   display: grid;
   grid-template-areas: "header header"
-                       "login mainBlockWrap"
+                       "login photoBG"
                        "navbar mainBlockWrap";
   grid-gap: 5px;
   width:65%;

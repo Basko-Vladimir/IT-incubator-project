@@ -1,14 +1,3 @@
-.main{
-    grid-area: main;
-    display: grid;
-    grid-gap: 5px;
-}
-
-.main .bgPhoto{
-    background-image: url("https://cameralabs.org/media/camera/may/23may2/33_a55f4eb12c2b31d701660b04422df33d.jpg");
-    background-size: cover;
-    height: 200px;
-}
 
 .main .contentBlock{
     background-color: #d7d7d7;
