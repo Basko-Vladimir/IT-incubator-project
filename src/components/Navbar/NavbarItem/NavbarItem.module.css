@@ -1,0 +1,33 @@
+.navItem{
+    height: 30px;
+    display: grid;
+    padding-left: 30px;
+    grid-template-columns: 1fr 4fr;
+}
+
+.navItem:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.navItem .icon{
+    width: 28px;
+    margin-right: 10px;
+    position:relative;
+    top: -3px;
+}
+.navItem .link {
+    text-decoration: none;
+    color: #000000;
+}
+
+.navItem .link:hover{
+    color:#68A3FF;
+}
+
+.navItem .activeLink{
+    color:#68A3FF;
+    text-decoration: underline;
+}
+
+

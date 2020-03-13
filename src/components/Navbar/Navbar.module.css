@@ -6,19 +6,6 @@
     background-color: #D7D7D7;
 }
 
-.navBar .navItem{
-    height: 30px;
-    padding-left: 50px;
-}
 
-.navBar .navItem a{
-    text-decoration: none;
-    color: #000000;
-}
-
-.navBar .navItem .activeLink{
-    color:#68A3FF;
-    text-decoration: underline;
-}
 
 

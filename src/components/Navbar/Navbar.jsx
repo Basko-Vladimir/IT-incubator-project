@@ -1,31 +1,24 @@
 import React from "react";
 import styles from "./Navbar.module.css";
-import {NavLink} from "react-router-dom";
+import homeIcon from "../../images/Home.png";
+import profileIcon from "../../images/Profile.png";
+import newsIcon from "../../images/News.png";
+import messageIcon from "../../images/Message.png";
+import usersIcon from "../../images/Users.png";
+import musicIcon from "../../images/Music.png";
+import settingsIcon from "../../images/Settings.png";
+import NavbarItem from "./NavbarItem/NavbarItem";
 
 const Navbar = () => {
   return (
       <nav className={styles.navBar}>
-          <div className={styles.navItem}>
-              <NavLink to="/home" activeClassName={styles.activeLink}>Home</NavLink>
-          </div>
-          <div className={styles.navItem}>
-              <NavLink to="/profile" activeClassName={styles.activeLink}>Profile</NavLink>
-          </div>
-          <div className={styles.navItem}>
-              <NavLink to="/news" activeClassName={styles.activeLink}>News</NavLink>
-          </div>
-          <div className={styles.navItem}>
-              <NavLink to="/dialogs" activeClassName={styles.activeLink}>Messages</NavLink>
-          </div>
-          <div className={styles.navItem}>
-              <NavLink to="/users" activeClassName={styles.activeLink}>Users</NavLink>
-          </div>
-          <div className={styles.navItem}>
-              <NavLink to="/music" activeClassName={styles.activeLink}>Music</NavLink>
-          </div>
-          <div className={styles.navItem}>
-              <NavLink to="/settings" activeClassName={styles.activeLink}>Settings</NavLink>
-          </div>
+          <NavbarItem url='/home' icon={homeIcon} link='Home'/>
+          <NavbarItem icon={profileIcon} link='Profile' />
+          <NavbarItem icon={newsIcon} link='News' />
+          <NavbarItem icon={messageIcon} link='Messages' />
+          <NavbarItem icon={usersIcon} link='Users' />
+          <NavbarItem icon={musicIcon} link='Music' />
+          <NavbarItem icon={settingsIcon} link='Settings' />
       </nav>
   )
 };

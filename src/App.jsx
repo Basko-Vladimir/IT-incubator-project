@@ -11,7 +11,7 @@ import Dialogs from "./components/Dialogs/Dialogs";
 import Users from "./components/Users/Users";
 import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
-import PhotoBG from "./components/Main/PhotoBG/PhotoBG";
+
 
 function App() {
     return (
