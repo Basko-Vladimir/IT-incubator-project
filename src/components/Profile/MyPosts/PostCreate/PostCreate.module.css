@@ -1,0 +1,54 @@
+.postCreate{
+    background-color: #ffffff;
+    display: grid;
+    grid-template-areas: "ava txt"
+                         "btn btn";
+    grid-template-rows: 2fr 1fr;
+    grid-template-columns: 1fr 9fr;
+    justify-content: center;
+    align-content: center;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.postCreate .avatar{
+    grid-area: ava;
+    justify-self: end;
+    align-self: center;
+    width: 50px;
+    border-radius: 25px;
+}
+
+.postCreate .textarea{
+    grid-area: txt;
+    justify-self: center;
+    align-self: center;
+    width:90%;
+    margin: 0 25px;
+    height:50px;
+    border: 1px #cec9d1 solid;
+    border-radius: 5px;
+    resize: none;
+}
+
+.postCreate .buttonBlock{
+    grid-area: btn;
+    justify-self: end;
+}
+
+.postCreate .buttonBlock .addPostBtn{
+    width: 100px;
+    height: 25px;
+    background-color: #3F4257;
+    text-align: center;
+    color: white;
+    font-size: 14px;
+    padding: 5px;
+    margin-right: 25px;
+    border-radius: 5px;
+    display: grid;
+    align-content: center;
+}
+
+
+

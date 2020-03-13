@@ -18,15 +18,15 @@
 }
 .navItem .link {
     text-decoration: none;
-    color: #000000;
+    color: #8689a6;
 }
 
 .navItem .link:hover{
-    color:#68A3FF;
+    color:#515365;
 }
 
 .navItem .activeLink{
-    color:#68A3FF;
+    color:#515365;
     text-decoration: underline;
 }
 

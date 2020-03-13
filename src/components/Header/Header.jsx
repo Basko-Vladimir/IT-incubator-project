@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Header.module.css";
-import earth from "../../images/earth.png";
+import earth from "../../images/earthWhite.png";
 
 const Header = () => {
     return (

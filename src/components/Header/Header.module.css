@@ -1,8 +1,9 @@
 .header{
     grid-area: header;
-    background-color: #68a3ff;
+    background-color: #3F4257;
     display: grid;
     grid-template: 100% / 2fr 4fr 3fr;
+    color: #ffffff;
 }
 
 .header .logoIcon{
