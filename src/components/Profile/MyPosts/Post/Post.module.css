@@ -1,3 +1,44 @@
 .postBlock{
     background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
 }
+
+.postBlock .postHeader {
+    height: 50px;
+    display: grid;
+    grid-template-areas: "ava name"
+                         "ava time";
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 9fr;
+    margin-bottom: 10px;
+}
+
+.postBlock .postHeader .avatar{
+    grid-area: ava;
+    width: 50px;
+    border-radius: 25px;
+    padding-right: 20px;
+}
+
+.postBlock .postHeader .name{
+    font-weight: bolder;
+    color:#515365;
+}
+
+.postBlock .postHeader .time{
+    font-size: 14px;
+    color:#A9ACC0;
+}
+
+
+.postBlock .postMessage {
+    color:#A9ACC0;
+    padding-bottom: 20px;
+    border-bottom: 1px #E6ECF5 solid;
+}
+
+/*.postBlock .postMessage {*/
+/*    height: 30px;*/
+/*    border: 1px solid;*/
+/*}*/
