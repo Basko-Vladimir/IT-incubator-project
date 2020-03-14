@@ -1,6 +1,9 @@
 import React from "react";
 import styles from "./Post.module.css";
 import avatar from "../../../../images/avatar.jpg";
+import like from "../../../../images/like.png";
+import comment from "../../../../images/comment.png";
+
 
 const Post = () => {
     return(
@@ -19,14 +22,15 @@ const Post = () => {
                 maxime numquam quidem, veniam. Aliquam aspernatur aut consequatur cupiditate.
             </div>
             <div className={styles.postReview}>
-                <div>
-                    <img src="" alt="like"/>
+                <div className={styles.like}>
+                    <img src={like} alt="like"/>
                     <span>37</span>
                 </div>
-                <div>
-                    <img src="" alt="comment"/>
+                <div className={styles.comment}>
+                    <img src={comment}  alt="comment"/>
+                    <span>12</span>
                 </div>
-            </>
+            </div>
         </div>
     )
 };

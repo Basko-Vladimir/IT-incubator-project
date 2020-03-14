@@ -38,7 +38,39 @@
     border-bottom: 1px #E6ECF5 solid;
 }
 
-/*.postBlock .postMessage {*/
-/*    height: 30px;*/
-/*    border: 1px solid;*/
-/*}*/
+.postBlock .postReview {
+    padding-top: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.postBlock .postReview .like {
+    justify-self: start;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.postBlock .postReview .like img{
+    width: 40px;
+}
+
+.postBlock .postReview .comment{
+    justify-self: end;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.postBlock .postReview .comment img{
+    width: 40px;
+}
+
+.postBlock .postReview .like span,
+.postBlock .postReview .comment span {
+    align-self: center;
+    color: #A9ACC0;
+}
+
+
+
+
+

@@ -2,7 +2,7 @@
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 270px 1fr;
-    grid-gap: 40px;
+    grid-gap: 30px;
 }
 
 .profileWrap .bgWrap {

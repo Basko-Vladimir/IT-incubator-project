@@ -1,0 +1,16 @@
+
+.contentBlock{
+    display: grid;
+    grid-template-columns: 1fr;
+    font-size: 14px;
+}
+
+.contentBlock .header{
+    padding: 5px 0;
+    font-weight: bolder;
+    color: #515365;
+}
+
+.contentBlock .content{
+    color: #A9ACC0;
+}

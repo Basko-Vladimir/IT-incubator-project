@@ -1,3 +1,27 @@
 .profileInfo{
     background-color: #ffffff;
+    display: grid;
+    grid-template-columns: 1fr;
+    border-radius: 5px;
+    color:#515365;
+    align-content: start;
 }
+
+.profileInfo div{
+    padding: 5px 20px;
+}
+
+.profileInfo .name{
+     padding: 20px 0 20px;
+     border-bottom: 1px #E6ECF5 solid;
+}
+
+.profileInfo .name span{
+    margin: 20px 0 20px 20px;
+    font-weight: bolder;
+}
+
+
+
+
+

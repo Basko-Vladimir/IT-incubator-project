@@ -9,8 +9,6 @@ const MyPosts = () => {
             <PostCreate/>
             <Post/>
             <Post/>
-            <Post/>
-            <Post/>
         </div>
     )
 };
