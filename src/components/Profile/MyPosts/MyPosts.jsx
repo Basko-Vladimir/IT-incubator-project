@@ -6,7 +6,7 @@ import PostCreate from "./PostCreate/PostCreate";
 const MyPosts = () => {
     return(
         <div className={styles.myPosts}>
-            <PostCreate/>
+            <PostCreate btnValue={'Add Post'}/>
             <Post/>
             <Post/>
         </div>

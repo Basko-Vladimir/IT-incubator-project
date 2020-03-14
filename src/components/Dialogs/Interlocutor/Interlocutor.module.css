@@ -1,0 +1,27 @@
+.interlocutor{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    padding: 10px;
+    grid-gap: 10px;
+}
+
+.interlocutor .avatar{
+    width:40px;
+    border-radius: 20px;
+}
+
+.interlocutor .content{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+
+.interlocutor .content .name{
+    font-size: 14px;
+    font-weight: bolder;
+    color: #515365;
+}
+
+.interlocutor .content .status{
+    font-size: 12px;
+    color: #A9ACC0;
+}

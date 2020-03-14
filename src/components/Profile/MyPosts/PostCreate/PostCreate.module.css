@@ -8,7 +8,7 @@
     justify-content: center;
     align-content: center;
     border-radius: 5px;
-    padding: 10px;
+    padding: 10px 50px 10px 10px;
 }
 
 .postCreate .avatar{
@@ -21,10 +21,9 @@
 
 .postCreate .textarea{
     grid-area: txt;
-    justify-self: center;
+    justify-self: end;
     align-self: center;
-    width:90%;
-    margin: 0 25px;
+    width:95%;
     height:50px;
     border: 1px #cec9d1 solid;
     border-radius: 5px;
@@ -44,7 +43,6 @@
     color: white;
     font-size: 14px;
     padding: 5px;
-    margin-right: 25px;
     border-radius: 5px;
     display: grid;
     align-content: center;

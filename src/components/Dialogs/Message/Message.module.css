@@ -1,0 +1,46 @@
+.messageBlock{
+    display: grid;
+    grid-template-columns: 1fr 6fr;
+    padding: 20px;
+}
+
+.messageBlock .avatar{
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+}
+
+.messageBlock .message{
+    background-color: #EDF2F6;
+    border-radius: 5px;
+    padding: 5px 10px 10px;
+}
+
+.messageBlock .message .messageHeader{
+    padding: 5px 5px 10px;
+    border-bottom: 1px #cec9d1 solid;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.messageBlock .message .messageHeader .name{
+    justify-self: start;
+    color: #515365;
+    font-weight: bolder;
+}
+.messageBlock .message .messageHeader .time{
+    justify-self: end;
+    padding-right: 10px;
+    font-size: 14px;
+    color: #A9ACC0;
+}
+
+.messageBlock .message .messageContent{
+    padding-top: 10px;
+    color: #A9ACC0;
+}
+
+
+
+
+

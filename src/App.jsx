@@ -23,7 +23,7 @@ function App() {
                 <Route  path='/home' component={Main} />
                 <Route  path='/profile' component={Profile}/>
                 <Route  path='/news' component={News}/>
-                <Route  path='/dialogs' component={Dialogs}/>
+                <Route  path='/messages' component={Dialogs}/>
                 <Route  path='/users' component={Users}/>
                 <Route  path='/music' component={Music}/>
                 <Route  path='/settings' component={Settings}/>

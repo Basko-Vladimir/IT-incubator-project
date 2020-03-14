@@ -1,0 +1,40 @@
+.dialogsWrap{
+    display: grid;
+    grid-template-rows: 1fr auto;
+    grid-gap: 10px;
+}
+
+.dialogsWrap .dialogsBlock{
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 5fr 2fr;
+}
+
+.dialogsWrap .dialogsBlock .messages{
+    max-height: 700px;
+    border-radius: 5px;
+    background-color: #ffffff;
+    overflow: auto;
+
+}
+
+.dialogsWrap .dialogsBlock .interlocutorsBlock{
+    background-color: #ffffff;
+    border-radius: 5px;
+    max-height: 700px;
+    overflow: auto;
+}
+
+.dialogsWrap .dialogsBlock .interlocutorsBlock .interlocutorsHeader{
+    border-bottom: 1px #cec9d1 solid;
+    padding: 10px;
+}
+
+.dialogsWrap .dialogsBlock .interlocutorsBlock .interlocutorsHeader span{
+    padding-left: 10px;
+}
+
+.dialogsWrap .dialogsBlock .interlocutorsBlock .interlocutors{
+    padding: 10px;
+}
+
