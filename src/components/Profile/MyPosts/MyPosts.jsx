@@ -4,12 +4,19 @@ import Post from "./Post/Post";
 import PostCreateContainer from "./PostCreate/PostCreateContainer";
 
 const MyPosts = (props) => {
-    let posts = props.posts.map(p => <Post key={Math.random()*10} message={p.message} likes={p.likeCounts}/>);
+
+    let posts = props.posts.map(p => <Post key = {Math.random()*10}
+                                           message = {p.message}
+                                           likes = {p.likeCounts}
+                                           comments = {p.commentCount}/>);
 
     return (
         <div className={styles.myPosts}>
             <PostCreateContainer/>
-            {posts}
+            <div className={styles.postWrap}>
+                {posts}
+            </div>
+
         </div>
     )
 };

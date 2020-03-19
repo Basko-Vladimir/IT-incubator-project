@@ -2,3 +2,10 @@
     display: grid;
     grid-gap: 10px;
 }
+
+.myPosts .postWrap{
+    max-height: 800px;
+    overflow: auto;
+    display: grid;
+    grid-gap: 10px;
+}

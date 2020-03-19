@@ -27,7 +27,7 @@ const Post = (props) => {
                 </div>
                 <div className={styles.comment}>
                     <img src={comment}  alt="comment"/>
-                    <span>12</span>
+                    <span>{props.comments}</span>
                 </div>
             </div>
         </div>

@@ -1,6 +1,6 @@
 .postBlock{
     background-color: #fff;
-    padding: 20px;
+    padding:  20px 20px 10px;
     border-radius: 5px;
 }
 
@@ -34,12 +34,12 @@
 
 .postBlock .postMessage {
     color:#A9ACC0;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
     border-bottom: 1px #E6ECF5 solid;
 }
 
 .postBlock .postReview {
-    padding-top: 20px;
+    padding-top: 10px;
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
@@ -50,18 +50,15 @@
     grid-template-columns: 1fr 1fr;
 }
 
-.postBlock .postReview .like img{
-    width: 40px;
+.postBlock .postReview .like img,
+.postBlock .postReview .comment img{
+    width: 30px;
 }
 
 .postBlock .postReview .comment{
     justify-self: end;
     display: grid;
     grid-template-columns: 1fr 1fr;
-}
-
-.postBlock .postReview .comment img{
-    width: 40px;
 }
 
 .postBlock .postReview .like span,
