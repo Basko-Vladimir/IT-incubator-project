@@ -1,16 +1,15 @@
 import React from "react";
 import styles from "./MyPosts.module.css";
 import Post from "./Post/Post";
-import PostCreate from "./PostCreate/PostCreate";
 import PostCreateContainer from "./PostCreate/PostCreateContainer";
 
-const MyPosts = () => {
-    return(
+const MyPosts = (props) => {
+    let posts = props.posts.map(p => <Post key={Math.random()*10} message={p.message} likes={p.likeCounts}/>);
+
+    return (
         <div className={styles.myPosts}>
-            {/*<PostCreate btnValue={'Add Post'}/>*/}
             <PostCreateContainer/>
-            <Post/>
-            <Post/>
+            {posts}
         </div>
     )
 };

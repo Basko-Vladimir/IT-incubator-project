@@ -15,3 +15,4 @@ ReactDOM.render(
     </BrowserRouter>, document.getElementById('root'));
 
 serviceWorker.unregister();
+window.store=store;

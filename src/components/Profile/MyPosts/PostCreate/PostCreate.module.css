@@ -48,5 +48,9 @@
     align-content: center;
 }
 
+.postCreate .buttonBlock:hover{
+    cursor: pointer;
+}
+
 
 

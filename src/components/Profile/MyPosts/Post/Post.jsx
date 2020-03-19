@@ -5,7 +5,7 @@ import like from "../../../../images/like.png";
 import comment from "../../../../images/comment.png";
 
 
-const Post = () => {
+const Post = (props) => {
     return(
         <div className={styles.postBlock}>
             <div className={styles.postHeader}>
@@ -18,13 +18,12 @@ const Post = () => {
                 </div>
             </div>
             <div className={styles.postMessage}>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et labore libero
-                maxime numquam quidem, veniam. Aliquam aspernatur aut consequatur cupiditate.
+                {props.message}
             </div>
             <div className={styles.postReview}>
                 <div className={styles.like}>
                     <img src={like} alt="like"/>
-                    <span>37</span>
+                    <span>{props.likes}</span>
                 </div>
                 <div className={styles.comment}>
                     <img src={comment}  alt="comment"/>

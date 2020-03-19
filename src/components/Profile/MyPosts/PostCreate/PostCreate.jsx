@@ -3,13 +3,21 @@ import styles from "./PostCreate.module.css";
 import avatar from "../../../../images/avatar.jpg";
 
 const PostCreate = (props) => {
-    debugger
+    let onAddNewPost = () => {
+        props.addNewPost();
+    };
+
+    let onChangeNewPostText = (event) => {
+        let newText = event.target.value;
+        props.changeNewPostText(newText);
+    };
+
     return(
         <div className={styles.postCreate}>
             <img className={styles.avatar} src={avatar} alt='avatar'/>
-            <textarea defaultValue='IT-incubator' className={styles.textarea}/>
+            <textarea  onChange={onChangeNewPostText} value={props.profilePage.newPostText} className={styles.textarea}/>
             <div className={styles.buttonBlock}>
-                <div onClick={() => alert('hei ho')} className={styles.addPostBtn}>
+                <div onClick={onAddNewPost} className={styles.addPostBtn}>
                     <span>Add Post</span>
                 </div>
             </div>

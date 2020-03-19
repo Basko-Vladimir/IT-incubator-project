@@ -1,20 +1,23 @@
 import React from "react";
 import PostCreate from "./PostCreate";
 import {connect} from "react-redux";
-import {addNewPostAC} from "../../../../redux/profile-reducer";
+import {addNewPostAC, changeNewPostTextAC} from "../../../../redux/profile-reducer";
 
 
 
 let mapStateToProps = (state) => {
     return {
-        profilePage: state
+        profilePage: state.profilePage
     }
 };
 
 let mapDispatchToProps = (dispatch) => {
     return {
-        addNewPost: (newPostText) => {
-            dispatch(addNewPostAC(newPostText));
+        addNewPost: () => {
+            dispatch(addNewPostAC());
+        },
+        changeNewPostText: (newText) => {
+            dispatch(changeNewPostTextAC(newText));
         }
     }
 };
