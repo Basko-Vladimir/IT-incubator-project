@@ -1,19 +1,19 @@
 import React from "react";
 import styles from "./Dialogs.module.css";
-import PostCreate from "../Profile/MyPosts/PostCreate/PostCreate";
 import Message from "./Message/Message";
 import Interlocutor from "./Interlocutor/Interlocutor";
+import MessageCreateContainer from "./MessageCreate/MessageCreateContainer";
 
-const Dialogs = () => {
+
+const Dialogs = (props) => {
+    let messages = props.messages.map( m => <Message key={Math.random()*10}
+                                                     name={props.dialogs.name}
+                                                     message={m.message}/>);
     return (
         <div className={styles.dialogsWrap}>
             <div className={styles.dialogsBlock}>
                 <div className={styles.messages}>
-                    <Message/>
-                    <Message/>
-                    <Message/>
-                    <Message/>
-                    <Message/>
+                    {messages}
                 </div>
                 <div className={styles.interlocutorsBlock}>
                     <div className={styles.interlocutorsHeader}>
@@ -37,8 +37,7 @@ const Dialogs = () => {
 
                 </div>
             </div>
-            <PostCreate btnValue={'New message'}/>
-
+            <MessageCreateContainer />
         </div>
     )
 };
