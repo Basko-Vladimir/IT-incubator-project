@@ -3,12 +3,14 @@ import styles from "./Dialogs.module.css";
 import Message from "./Message/Message";
 import Interlocutor from "./Interlocutor/Interlocutor";
 import MessageCreateContainer from "./MessageCreate/MessageCreateContainer";
+import PropTypes from "prop-types";
 
 
 const Dialogs = (props) => {
-    let messages = props.messages.map( m => <Message key={Math.random()*10}
+    let messages = props.messages.map( m => <Message key={m.id}
                                                      message={m.message}/>);
     let interlocutors = props.dialogs.map( d => <Interlocutor key={d.id} name={d.name}/>);
+
     return (
         <div className={styles.dialogsWrap}>
             <div className={styles.dialogsBlock}>
@@ -30,3 +32,8 @@ const Dialogs = (props) => {
 };
 
 export default Dialogs;
+
+Dialogs.propTypes = {
+    messages: PropTypes.array,
+    dialogs: PropTypes.array
+};

@@ -3,6 +3,8 @@ import styles from "./Post.module.css";
 import avatar from "../../../../images/avatar.jpg";
 import like from "../../../../images/like.png";
 import comment from "../../../../images/comment.png";
+import PropTypes from "prop-types";
+
 
 
 const Post = (props) => {
@@ -35,3 +37,16 @@ const Post = (props) => {
 };
 
 export default Post;
+
+Post.propTypes = {
+    message: PropTypes.string,
+    likes: PropTypes.number,
+    comments: PropTypes.number
+};
+
+Post.defaultProps = {
+    message: 'Empty text message!!!',
+    likes: 0,
+    comments:0
+};
+

@@ -2,10 +2,11 @@ import React from "react";
 import styles from "./MyPosts.module.css";
 import Post from "./Post/Post";
 import PostCreateContainer from "./PostCreate/PostCreateContainer";
+import PropTypes from "prop-types";
 
 const MyPosts = (props) => {
 
-    let posts = props.posts.map(p => <Post key = {Math.random()*10}
+    let posts = props.posts.map(p => <Post key = {p.id}
                                            message = {p.message}
                                            likes = {p.likeCounts}
                                            comments = {p.commentCount}/>);
@@ -22,3 +23,7 @@ const MyPosts = (props) => {
 };
 
 export default MyPosts;
+
+MyPosts.propTypes = {
+    posts: PropTypes.array,
+};

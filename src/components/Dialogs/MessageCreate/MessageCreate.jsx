@@ -1,6 +1,7 @@
 import React from "react";
 import avatar from "../../../images/avatar.jpg";
 import styles from "./MessageCreate.module.css";
+import PropTypes from "prop-types";
 
 const MessageCreate = (props) => {
     let onAddNewMessage = () => {
@@ -25,3 +26,13 @@ const MessageCreate = (props) => {
 };
 
 export default MessageCreate;
+
+MessageCreate.propTypes = {
+    newMessageText: PropTypes.string,
+    addNewMessage: PropTypes.func,
+    changeNewMessageText: PropTypes.func,
+};
+
+MessageCreate.defaultProps = {
+    newMessageText: 'IT-incubator'
+};

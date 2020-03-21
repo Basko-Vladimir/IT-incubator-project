@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./Message.module.css";
 import avatar from "../../../images/avatar.jpg";
+import PropTypes from "prop-types";
 
 const Message = (props) => {
     return(
@@ -20,3 +21,11 @@ const Message = (props) => {
 };
 
 export default Message;
+
+Message.propTypes= {
+    message: PropTypes.string
+};
+
+Message.propTypes = {
+    message: 'Empty message text!!!'
+};

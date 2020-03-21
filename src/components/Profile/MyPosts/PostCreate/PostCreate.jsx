@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./PostCreate.module.css";
 import avatar from "../../../../images/avatar.jpg";
+import PropTypes from "prop-types";
 
 const PostCreate = (props) => {
     let onAddNewPost = () => {
@@ -26,3 +27,9 @@ const PostCreate = (props) => {
 };
 
 export default PostCreate;
+
+PostCreate.propTypes = {
+    newMessageText: PropTypes.string,
+    addNewPost: PropTypes.func,
+    changeMewPostText: PropTypes.func
+};
