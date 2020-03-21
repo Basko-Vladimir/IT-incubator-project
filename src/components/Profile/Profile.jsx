@@ -4,7 +4,7 @@ import avatar from "../../images/avatar.jpg";
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
 import MyPostsContainer from "./MyPosts/MyPostsContainer";
 
-const Profile = () => {
+const  Profile = () => {
     return (
         <div className={styles.profileWrap}>
             <div className={styles.bgWrap}>

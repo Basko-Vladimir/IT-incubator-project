@@ -2,6 +2,7 @@ import React from "react";
 import Dialogs from "./Dialogs";
 import {connect} from "react-redux";
 
+
 let mapStateToProps = (state) => {
     return {
         messages: state.dialogsPage.messages,
@@ -9,12 +10,6 @@ let mapStateToProps = (state) => {
     }
 };
 
-let mapDispatchToProps = () => {
-    return {
-        a:3
-    }
-};
-
-const DialogsContainer = connect(mapStateToProps, mapDispatchToProps)(Dialogs);
+const DialogsContainer = connect(mapStateToProps)(Dialogs);
 
 export default DialogsContainer;

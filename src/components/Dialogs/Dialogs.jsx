@@ -7,8 +7,8 @@ import MessageCreateContainer from "./MessageCreate/MessageCreateContainer";
 
 const Dialogs = (props) => {
     let messages = props.messages.map( m => <Message key={Math.random()*10}
-                                                     name={props.dialogs.name}
                                                      message={m.message}/>);
+    let interlocutors = props.dialogs.map( d => <Interlocutor key={d.id} name={d.name}/>);
     return (
         <div className={styles.dialogsWrap}>
             <div className={styles.dialogsBlock}>
@@ -20,21 +20,8 @@ const Dialogs = (props) => {
                         <span>Interlocutors</span>
                     </div>
                     <div className={styles.interlocutors}>
-                        <Interlocutor/>
-                        <Interlocutor/>
-                        <Interlocutor/>
-                        <Interlocutor/>
-                        <Interlocutor/>
-                        <Interlocutor/>
-                        <Interlocutor/>
-                        <Interlocutor/>
-                        <Interlocutor/>
-                        <Interlocutor/>
-                        <Interlocutor/>
-                        <Interlocutor/>
-                        <Interlocutor/>
+                        {interlocutors}
                     </div>
-
                 </div>
             </div>
             <MessageCreateContainer />
