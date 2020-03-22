@@ -12,7 +12,7 @@ const MessageCreate = (props) => {
         let newText = event.target.value;
         props.changeNewMessageText(newText);
     };
-    return(
+    return (
         <div className={styles.messageCreate}>
             <img className={styles.avatar} src={avatar} alt='avatar'/>
             <textarea onChange={onChangeNewMessageText} value={props.newMessageText} className={styles.textarea}/>

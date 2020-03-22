@@ -1,9 +1,9 @@
 import React from "react";
-import styles from "./Message.module.css";
-import avatar from "../../../images/avatar.jpg";
+import styles from "./MessageItem.module.css";
+import avatar from "../../../../images/avatar.jpg";
 import PropTypes from "prop-types";
 
-const Message = (props) => {
+const MessageItem = (props) => {
     return(
         <div className={styles.messageBlock}>
             <img className={styles.avatar} src={avatar} alt="avatar"/>
@@ -20,12 +20,12 @@ const Message = (props) => {
     )
 };
 
-export default Message;
+export default MessageItem;
 
-Message.propTypes= {
+MessageItem.propTypes= {
     message: PropTypes.string
 };
 
-Message.propTypes = {
+MessageItem.propTypes = {
     message: 'Empty message text!!!'
 };

@@ -1,0 +1,19 @@
+.interlocutorsBlock{
+    background-color: #ffffff;
+    border-radius: 5px;
+    max-height: 700px;
+    overflow: auto;
+}
+
+.interlocutorsBlock .interlocutorsHeader{
+    border-bottom: 1px #cec9d1 solid;
+    padding: 10px;
+}
+
+.interlocutorsBlock .interlocutorsHeader span{
+    padding-left: 10px;
+}
+
+.interlocutorsBlock .interlocutors{
+    padding: 10px;
+}
