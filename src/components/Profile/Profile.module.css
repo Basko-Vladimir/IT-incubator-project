@@ -1,7 +1,7 @@
 .profileWrap{
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 270px 1fr;
+    grid-template-rows: 250px 1fr;
     grid-gap: 30px;
 }
 
@@ -13,7 +13,6 @@
     height: 100%;
     background-image: url('../../images/bgPhotoProfile.jpg');
     background-size: cover;
-    border: 1px solid;
 }
 
 .profileWrap .bgWrap .avatar {

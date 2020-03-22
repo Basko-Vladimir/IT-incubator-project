@@ -8,7 +8,7 @@ const MyPosts = (props) => {
 
     let posts = props.posts.map(p => <Post key = {p.id}
                                            message = {p.message}
-                                           likes = {p.likeCounts}
+                                           likes = {p.likeCount}
                                            comments = {p.commentCount}/>);
 
     return (
@@ -25,5 +25,5 @@ const MyPosts = (props) => {
 export default MyPosts;
 
 MyPosts.propTypes = {
-    posts: PropTypes.array,
+    posts: PropTypes.array
 };

@@ -2,7 +2,7 @@
     grid-area: header;
     background-color: #3F4257;
     display: grid;
-    grid-template: 100% / 2fr 4fr 3fr;
+    grid-template: 100% / 1fr 5fr 3fr;
     color: #ffffff;
 }
 
@@ -20,6 +20,7 @@
 
 .header .logoText{
     align-self: center;
+    font-style: italic;
 }
 
 .header .language{

@@ -1,0 +1,13 @@
+.userBlock {
+    display: grid;
+    grid-template: 70px / 1fr;
+    grid-gap: 10px;
+}
+
+.userBlock .users {
+    display: grid;
+    grid-template: repeat(4, 1fr) / repeat(3, 1fr);
+    grid-gap: 20px;
+    background-color: #ffffff;
+    padding: 50px 20px;
+}

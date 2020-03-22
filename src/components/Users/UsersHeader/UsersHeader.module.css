@@ -1,0 +1,34 @@
+.usersHeader {
+    background-color: #ffffff;
+    border-radius: 5px;
+    display: grid;
+    grid-template: 100% / 2fr 8fr;
+    justify-items: center;
+    align-items: center;
+    padding: 25px;
+}
+
+.usersHeader .sumUsers {
+    color: #515365;
+    font-weight: bolder;
+    justify-self: start;
+}
+
+.usersHeader .searchUsers {
+    justify-self: end;
+}
+
+.usersHeader .searchUsers .textInput {
+    padding: 5px;
+}
+
+.usersHeader .searchUsers .textButton {
+    padding: 7px 10px;
+    background-color: #3F4257;
+    border: none;
+    color: #ffffff;
+}
+
+.usersHeader .searchUsers .textButton:hover {
+    cursor: pointer;
+}

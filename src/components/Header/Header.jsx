@@ -9,7 +9,7 @@ const Header = () => {
                 <img src={earth} alt="icon"/>
             </div>
             <div className={styles.logoText}>
-                <h1>SocNet</h1>
+                <h1>Social Network</h1>
             </div>
             <div className={styles.language}>
                 <span>Русский</span>

@@ -4,9 +4,9 @@ const NEW_POST_TEXT = 'NEW_POST_TEXT';
 
 let initialState = {
     posts: [
-        {id: 0, message: 'Hi, how are you?', likeCounts: 12, commentCount: 2 },
-        {id: 1, message: 'Yo Yo', likeCounts: 16, commentCount: 11},
-        {id: 2, message: 'Today is nice day', likeCounts: 7, commentCount: 6}],
+        {id: 0, message: 'Hi, how are you?', likeCount: 12, commentCount: 2 },
+        {id: 1, message: 'Yo Yo', likeCount: 16, commentCount: 11},
+        {id: 2, message: 'Today is nice day', likeCount: 7, commentCount: 6}],
     newPostText: ''
 };
 

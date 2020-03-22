@@ -1,0 +1,65 @@
+.userItem {
+    display: grid;
+    grid-template-rows: 140px 1fr;
+    border-bottom: 1px solid #dddddd;
+    border-radius: 5px;
+    background-color: #ffffff;
+    grid-gap: 20px;
+}
+
+.userItem .bgPhoto {
+    height: 100%;
+    background-size: cover;
+    background-image: url('../../../images/bgPhotoUsers.jpg');
+    position: relative;
+}
+
+.userItem .bgPhoto .avatar {
+    position: absolute;
+    width: 25%;
+    border-radius: 50%;
+    left: 15%;
+    bottom: -15%;
+    border: 3px #ffffff solid;
+}
+
+.userItem .bgPhoto .subscription {
+    padding: 2px 10px;
+    background-color: #ffffff;
+    opacity: 0.6;
+    border-radius: 2px;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    color: #3d3f7a;
+}
+
+.userItem .bgPhoto .subscription:hover {
+    cursor: pointer;
+    opacity: 1;
+}
+
+.userItem .userInfo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+    padding:10px;
+}
+
+.userItem .userInfo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+    padding:10px 20px;
+    color: #515365;
+}
+
+.userItem .userInfo div:nth-child(even) {
+    justify-self: end;
+}
+
+.userItem .userInfo .name {
+    font-weight: bolder;
+    color: #27AAE1;
+}
+
