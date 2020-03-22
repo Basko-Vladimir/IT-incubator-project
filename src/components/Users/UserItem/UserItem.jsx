@@ -1,26 +1,31 @@
 import React from "react";
 import styles from "./UserItem.module.css";
 import avatar from "../../../images/avatar.jpg";
+import PropTypes from "prop-types";
 
-const UserItem = () => {
+const UserItem = (props) => {
     return (
         <div className={styles.userItem}>
             <div className={styles.bgPhoto}>
                 <img src={avatar} className={styles.avatar} alt="avatar"/>
-                <div className={styles.subscription}>Follow</div>
+                { props.isFollow
+                    ?  <div onClick={() => {props.unfollow(props.user.id)} } className={styles.subscription}>Unfollow</div>
+                    :  <div onClick={() => {props.follow(props.user.id)} } className={styles.subscription}>Follow</div> }
+
+
             </div>
             <div className={styles.userInfo}>
                 <div className={styles.name}>
-                    <span>Ivanov Ivan</span>
+                    <span>{props.user.name}</span>
                 </div>
-                <div className={styles.counrty}>
-                    <span>Belarus</span>
+                <div >
+                    <span>{props.user.location.country}</span>
                 </div>
-                <div className={styles.status}>
-                    <span>Status</span>
+                <div>
+                    <span>{props.user.status}</span>
                 </div>
-                <div className={styles.city}>
-                    <span>Minsk</span>
+                <div>
+                    <span>{props.user.location.city}</span>
                 </div>
             </div>
         </div>
@@ -28,3 +33,6 @@ const UserItem = () => {
 };
 
 export default UserItem;
+UserItem.propTypes = {
+    users: PropTypes.object
+};

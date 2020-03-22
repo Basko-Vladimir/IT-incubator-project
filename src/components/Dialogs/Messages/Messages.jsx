@@ -15,5 +15,6 @@ const Messages = (props) => {
 export default Messages;
 
 Messages.propTypes = {
-    messages: PropTypes.array
+    messages: PropTypes.array,
+    message: PropTypes.string
 };

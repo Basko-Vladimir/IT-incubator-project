@@ -7,10 +7,10 @@ import Login from "./components/Login/Login";
 import Profile from "./components/Profile/Profile";
 import {Route} from "react-router-dom";
 import News from "./components/News/News";
-import Users from "./components/Users/Users";
 import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
 import Dialogs from "./components/Dialogs/Dialogs";
+import UsersContainer from "./components/Users/UsersContainer";
 
 
 function App() {
@@ -24,7 +24,7 @@ function App() {
                 <Route  path='/profile' component={Profile}/>
                 <Route  path='/news' component={News}/>
                 <Route  path='/messages' component={Dialogs}/>
-                <Route  path='/users' component={Users}/>
+                <Route  path='/users' component={UsersContainer}/>
                 <Route  path='/music' component={Music}/>
                 <Route  path='/settings' component={Settings}/>
             </div>
