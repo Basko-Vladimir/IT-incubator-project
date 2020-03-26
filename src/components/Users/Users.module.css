@@ -6,8 +6,30 @@
 
 .userBlock .users {
     display: grid;
-    grid-template: repeat(4, 1fr) / repeat(3, 1fr);
+    grid-template: repeat(3, 1fr) / repeat(3, 1fr);
     grid-gap: 20px;
     background-color: #ffffff;
-    padding: 50px 20px;
+    padding: 0 20px 20px;
+}
+
+.userBlock .pagesNumberBlock {
+    text-align: center;
+    background-color: #ffffff;
+}
+
+.userBlock .pagesNumberBlock .usersWrap{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+
+.userBlock .usersWrap .pagesNumberBlock {
+    padding: 20px;
+}
+
+.userBlock .usersWrap .pagesNumberBlock span:hover {
+    cursor: pointer;
+}
+
+.userBlock .pagesNumberBlock .active {
+    font-weight: bold;
 }

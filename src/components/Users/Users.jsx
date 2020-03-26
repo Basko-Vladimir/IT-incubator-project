@@ -3,32 +3,37 @@ import styles from "./Users.module.css";
 import UsersHeader from "./UsersHeader/UsersHeader";
 import UserItem from "./UserItem/UserItem";
 import PropTypes from "prop-types";
-import * as axios from "axios";
 
-class Users extends React.Component {
+const Users = (props) => {
 
-    componentDidMount() {
-        axios.get('https://social-network.samuraijs.com/api/1.0/users')
-            .then(response => {
-                this.props.setUsers(response.data.items);
-            })
+    let pagesCount = Math.ceil(props.totalCount / props.pageSize);
+    let pages = [];
+    for (let i = 1; i <= pagesCount; i++) {
+        pages.push(i);
     }
 
-    render() {
-        return (
-            <div className={styles.userBlock}>
-                <UsersHeader/>
+    return (
+        <div className={styles.userBlock}>
+            <UsersHeader/>
+            <div className={styles.usersWrap}>
+                <div className={styles.pagesNumberBlock}>
+                    {pages.map(u => {
+                        return <span key={u}
+                                     className={props.currentPage === u ? styles.active : ''}
+                                     onClick={() => props.onChangePage(u)}>{u} </span>
+                    })}
+                </div>
                 <div className={styles.users}>
-                    {this.props.users.map( u => <UserItem key = {u.id}
-                                                     user = {u}
-                                                     isFollow = {u.isFollow}
-                                                     follow = {this.props.follow}
-                                                     unfollow = {this.props.unfollow} />)}
+                    {props.users.map(u => <UserItem key={u.id}
+                                                    user={u}
+                                                    isFollow={u.isFollow}
+                                                    follow={props.follow}
+                                                    unfollow={props.unfollow}/>)}
                 </div>
             </div>
-        )
-    }
-}
+        </div>
+    )
+};
 
 export default Users;
 Users.propTypes = {
