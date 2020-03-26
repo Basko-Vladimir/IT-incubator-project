@@ -4,28 +4,27 @@ import avatar from "../../../images/avatar.jpg";
 import PropTypes from "prop-types";
 
 const UserItem = (props) => {
+
     return (
         <div className={styles.userItem}>
             <div className={styles.bgPhoto}>
                 <img src={avatar} className={styles.avatar} alt="avatar"/>
-                { props.isFollow
+                { props.user.followed
                     ?  <div onClick={() => {props.unfollow(props.user.id)} } className={styles.subscription}>Unfollow</div>
                     :  <div onClick={() => {props.follow(props.user.id)} } className={styles.subscription}>Follow</div> }
-
-
             </div>
             <div className={styles.userInfo}>
                 <div className={styles.name}>
                     <span>{props.user.name}</span>
                 </div>
                 <div >
-                    <span>{props.user.location.country}</span>
+                    <span>Country</span>
                 </div>
                 <div>
-                    <span>{props.user.status}</span>
+                    <span>{props.user.status ? props.user.status : `Status don't specified` }</span>
                 </div>
                 <div>
-                    <span>{props.user.location.city}</span>
+                    <span>City</span>
                 </div>
             </div>
         </div>
