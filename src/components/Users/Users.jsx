@@ -3,9 +3,9 @@ import styles from "./Users.module.css";
 import UsersHeader from "./UsersHeader/UsersHeader";
 import UserItem from "./UserItem/UserItem";
 import PropTypes from "prop-types";
+import Preloader from "../common/Preloader/Preloader";
 
 const Users = (props) => {
-
     let pagesCount = Math.ceil(props.totalCount / props.pageSize);
     let pages = [];
     for (let i = 1; i <= pagesCount; i++) {
@@ -14,6 +14,7 @@ const Users = (props) => {
 
     return (
         <div className={styles.userBlock}>
+            {props.isFetching ? <Preloader/> : null}
             <UsersHeader/>
             <div className={styles.usersWrap}>
                 <div className={styles.pagesNumberBlock}>

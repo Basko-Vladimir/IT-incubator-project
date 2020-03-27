@@ -2,6 +2,7 @@
     display: grid;
     grid-template: 70px / 1fr;
     grid-gap: 10px;
+    position: relative;
 }
 
 .userBlock .users {
