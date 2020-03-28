@@ -2,15 +2,19 @@ import React from "react";
 import styles from "./UserItem.module.css";
 import avatar from "../../../images/avatar.jpg";
 import PropTypes from "prop-types";
+import {NavLink} from "react-router-dom";
 
 const UserItem = (props) => {
+
     return (
         <div className={styles.userItem}>
             <div className={styles.bgPhoto}>
-                <img src={ props.user.photos.small ? props.user.photos.small : avatar} className={styles.avatar} alt="avatar"/>
-                {props.user.followed
-                    ?  <div onClick={() => {props.unfollow(props.user.id)} } className={styles.subscription}>Unfollow</div>
-                    :  <div onClick={() => {props.follow(props.user.id)} } className={styles.subscription}>Follow</div> }
+                <NavLink to={`/profile/${props.user.id}`}>
+                    <img src={ props.user.photos.small ? props.user.photos.small : avatar} className={styles.avatar} alt="avatar"/>
+                </NavLink>
+                    {props.user.followed
+                        ?  <div onClick={() => {props.unfollow(props.user.id)} } className={styles.subscription}>Unfollow</div>
+                        :  <div onClick={() => {props.follow(props.user.id)} } className={styles.subscription}>Follow</div> }
             </div>
             <div className={styles.userInfo}>
                 <div className={styles.name}>

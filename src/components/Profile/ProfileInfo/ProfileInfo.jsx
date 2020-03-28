@@ -2,13 +2,15 @@ import React from "react";
 import styles from "./ProfileInfo.module.css";
 import Info from "./Info/Info";
 
-const ProfileInfo = () => {
+
+const ProfileInfo = (props) => {
+
     return (
         <div className={styles.profileInfo}>
             <div className={styles.name}>
-                <span>Иванов Иван</span>
+                <span>{props.profile.fullName}</span>
             </div>
-            <Info content={'Lorem ipsum dolor sit amet, consectetur'}
+            <Info content={props.profile.aboutMe ? props.profile.aboutMe : 'Lorem ipsum dolor sit amet, consectetur'}
                   header={"About Me"}/>
             <Info content={'15 июня 1990'} header={"Birthday"}/>
             <Info content={'Belarus'} header={"Country"}/>
