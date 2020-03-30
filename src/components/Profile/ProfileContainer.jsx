@@ -6,18 +6,17 @@ import *as axios from "axios";
 import {withRouter} from "react-router-dom";
 
 class ProfileContainer extends React.Component {
-
     componentDidMount() {
         axios.get(`https://social-network.samuraijs.com/api/1.0/profile/${this.props.match.params.userId}`)
-            .then( response => {
+            .then(response => {
                 this.props.setUserProfile(response.data);
+                debugger
             })
     }
 
     render() {
-
         return (
-            <Profile profile={this.props.profile} />
+            <Profile profile={this.props.profile}/>
         )
     }
 }

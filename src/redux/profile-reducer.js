@@ -2,7 +2,6 @@ const ADD_NEW_POST = 'ADD_NEW_POST';
 const NEW_POST_TEXT = 'NEW_POST_TEXT';
 const SET_USER_PROFILE = 'SET_USER_PROFILE';
 
-
 let initialState = {
     posts: [
         {id: 0, message: 'Hi, how are you?', likeCount: 12, commentCount: 2 },
@@ -10,11 +9,9 @@ let initialState = {
         {id: 2, message: 'Today is nice day', likeCount: 7, commentCount: 6}],
     newPostText: '',
     profile: null
-
 };
 
 const profileReducer = (state = initialState, action) => {
-
     switch (action.type) {
         case ADD_NEW_POST:
             let newPost = {
@@ -38,7 +35,6 @@ const profileReducer = (state = initialState, action) => {
             return {
                 ...state,
                 profile: action.userProfile
-
             };
         default:
             return state
