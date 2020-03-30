@@ -13,7 +13,7 @@ const MyPosts = (props) => {
 
     return (
         <div className={styles.myPosts}>
-            <PostCreateContainer/>
+            <PostCreateContainer />
             <div className={styles.postWrap}>
                 {posts}
             </div>

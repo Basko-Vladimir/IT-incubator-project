@@ -6,7 +6,7 @@ const NavbarItem = (props) => {
     return (
         <div className={styles.navItem}>
             <img src={props.icon} alt="homeIcon" className={styles.icon}/>
-            <NavLink to={`${props.link.toLowerCase()[0]}${props.link.slice(1)}`}
+            <NavLink to={`/${props.link.toLowerCase()}`}
                      activeClassName={styles.activeLink}
                      className={styles.link}>{props.link}</NavLink>
         </div>

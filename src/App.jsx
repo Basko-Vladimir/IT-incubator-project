@@ -21,9 +21,9 @@ function App() {
             <Navbar/>
             <div className='mainBlockWrap'>
                 <Route  path='/home' render={() => <Main/> } />
-                <Route  path='/profile/:userId?' render={ () => <ProfileContainer/> }/>
+                <Route  path='/profile/:userId?' render={() => <ProfileContainer/> }/>
                 <Route  path='/news' render={() => <News/> }/>
-                <Route  path='/messages' render={() => <Dialogs/> }/>
+                <Route  path='/dialogs' render={() => <Dialogs/> }/>
                 <Route  path='/users' render={() => <UsersContainer/> }/>
                 <Route  path='/music' render={() => <Music/> }/>
                 <Route  path='/settings' render={() => <Settings/> }/>

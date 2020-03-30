@@ -15,7 +15,7 @@ const Navbar = () => {
           <NavbarItem url='/home' icon={homeIcon} link='Home'/>
           <NavbarItem icon={profileIcon} link='Profile' />
           <NavbarItem icon={newsIcon} link='News' />
-          <NavbarItem icon={messageIcon} link='Messages' />
+          <NavbarItem icon={messageIcon} link='Dialogs' />
           <NavbarItem icon={usersIcon} link='Users' />
           <NavbarItem icon={musicIcon} link='Music' />
           <NavbarItem icon={settingsIcon} link='Settings' />

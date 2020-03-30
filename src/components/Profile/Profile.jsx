@@ -14,11 +14,10 @@ const  Profile = (props) => {
             <div className={styles.bgWrap}>
                 <div className={styles.bgPhoto}> </div>
                 <img className={styles.avatar} src={props.profile.photos.small
-                    ? props.profile.photos.small
-                    : avatar} alt='avatar'/>
+                    ? props.profile.photos.small : avatar} alt='avatar'/>
             </div>
             <div className={styles.profileBlock}>
-                <MyPostsContainer/>
+                <MyPostsContainer />
                 <ProfileInfo profile={props.profile}/>
             </div>
         </div>
