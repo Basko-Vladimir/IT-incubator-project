@@ -8,7 +8,7 @@ const LoginAuth = (props) => {
                 <img src={avatar} alt="avatar"/>
                 <div className={styles.header}>Hi {props.userData.login}, you authorised</div>
                 <input type='button' value='Edit Profile' className={styles.editProfile}/>
-                <div onClick={props.exitFromProfile} className={styles.exit}>Выйти</div>
+                <div onClick={props.exitFromProfile} className={styles.exit}>Exit</div>
             </div>
         </div>
     )
