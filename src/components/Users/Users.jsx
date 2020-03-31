@@ -15,7 +15,7 @@ const Users = (props) => {
     return (
         <div className={styles.userBlock}>
             {props.isFetching ? <Preloader/> : null}
-            <UsersHeader/>
+            <UsersHeader usersCount={props.totalCount}/>
             <div className={styles.usersWrap}>
                 <div className={styles.pagesNumberBlock}>
                     {pages.map(u => {

@@ -9,7 +9,7 @@ const UserItem = (props) => {
     return (
         <div className={styles.userItem}>
             <div className={styles.bgPhoto}>
-                <NavLink to={`/profile/${props.user.id}`}>
+                <NavLink className={styles.userProfileLink} to={`/profile/${props.user.id}`}>
                     <img src={ props.user.photos.small ? props.user.photos.small : avatar} className={styles.avatar} alt="avatar"/>
                 </NavLink>
                     {props.user.followed
@@ -17,9 +17,11 @@ const UserItem = (props) => {
                         :  <div onClick={() => {props.follow(props.user.id)} } className={styles.subscription}>Follow</div> }
             </div>
             <div className={styles.userInfo}>
-                <div className={styles.name}>
-                    <span>{props.user.name}</span>
-                </div>
+                <NavLink className={styles.userProfileLink} to={`/profile/${props.user.id}`}>
+                    <div className={styles.name}>
+                        <span>{props.user.name}</span>
+                    </div>
+                </NavLink>
                 <div >
                     <span>Country</span>
                 </div>

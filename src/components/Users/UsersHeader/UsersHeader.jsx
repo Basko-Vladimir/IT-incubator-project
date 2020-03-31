@@ -2,11 +2,11 @@ import React from "react";
 import styles from "./UsersHeader.module.css";
 
 
-const UsersHeader = () => {
+const UsersHeader = (props) => {
     return (
         <div className={styles.usersHeader}>
             <div className={styles.sumUsers}>
-                <span>All users (0)</span>
+                <span>All users ({props.usersCount})</span>
             </div>
             <div className={styles.searchUsers}>
                 <input type="text" className={styles.textInput} placeholder={'Search...'}/>
