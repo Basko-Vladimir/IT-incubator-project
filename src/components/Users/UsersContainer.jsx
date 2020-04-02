@@ -9,32 +9,28 @@ import {
 } from "../../redux/users-reducer";
 import Users from "./Users";
 import React from "react";
-import * as axios from "axios";
+import {usersAPI} from "../../API/API";
 
 class UsersContainer extends React.Component {
     componentDidMount() {
         this.props.toggleIsFetching(true);
-        axios.get(`https://social-network.samuraijs.com/api/1.0/users?count=${this.props.pageSize}&page=${this.props.currentPage}`,{
-            withCredentials: true})
-            .then(response => {
-                this.props.setUsers(response.data.items);
+        usersAPI.getUsers(this.props.pageSize, this.props.currentPage)
+            .then(data => {
+                this.props.setUsers(data.items);
                 this.props.toggleIsFetching(false);
                 // this.props.setTotalUsersCount(response.data.totalCount); пока закомментил т.к. очень много
                 // пользователей, поэтому пока захардкодил 200
             })
     }
-
     onChangePage = (currentPage) => {
         this.props.setCurrentPage(currentPage);
         this.props.toggleIsFetching(true);
-        axios.get(`https://social-network.samuraijs.com/api/1.0/users?count=${this.props.pageSize}&page=${currentPage}`,{
-            withCredentials: true})
-            .then(response => {
-                this.props.setUsers(response.data.items);
+        usersAPI.getUsers(this.props.pageSize, currentPage)
+            .then(data => {
+                this.props.setUsers(data.items);
                 this.props.toggleIsFetching(false);
             })
     };
-
     render() {
         return <Users totalCount={this.props.totalCount}
                       pageSize={this.props.pageSize}
