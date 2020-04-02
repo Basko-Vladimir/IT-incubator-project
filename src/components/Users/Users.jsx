@@ -29,7 +29,9 @@ const Users = (props) => {
                                                     user={u}
                                                     isFollow={u.isFollow}
                                                     follow={props.follow}
-                                                    unfollow={props.unfollow}/>)}
+                                                    unfollow={props.unfollow}
+                                                    isFollowUser={props.isFollowUser}
+                                                    toggleIsFollowUser={props.toggleIsFollowUser}/>)}
                 </div>
             </div>
         </div>

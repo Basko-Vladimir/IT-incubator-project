@@ -13,22 +13,30 @@ const UserItem = (props) => {
                     <img src={ props.user.photos.small ? props.user.photos.small : avatar} className={styles.avatar} alt="avatar"/>
                 </NavLink>
                     {props.user.followed
-                        ?  <div onClick={() => {
-                            usersAPI.unfollow(props.user.id)
-                                .then(data => {
-                                    if (data.resultCode === 0){
-                                        props.unfollow(props.user.id)
-                                    }
-                                });
-                        }} className={styles.subscription}>Unfollow</div>
-                        :  <div onClick={() => {
-                            usersAPI.follow(props.user.id)
-                                .then(data => {
-                                    if (data.resultCode === 0){
-                                        props.follow(props.user.id)
-                                    }
-                                });
-                        }} className={styles.subscription}>Follow</div> }
+                        ?  <button disabled={props.isFollowUser.some(id => id === props.user.id)}
+                                   className={styles.subscription}
+                                   onClick={() => {
+                                       props.toggleIsFollowUser(true, props.user.id);
+                                       usersAPI.unfollow(props.user.id)
+                                           .then(data => {
+                                               if (data.resultCode === 0) {
+                                                   props.unfollow(props.user.id)
+                                               }
+                                               props.toggleIsFollowUser(false, props.user.id);
+                                           });
+                                   }}>Unfollow</button>
+                        :  <button disabled={props.isFollowUser.some(id => id === props.user.id)}
+                                   className={styles.subscription}
+                                   onClick={() => {
+                                       props.toggleIsFollowUser(true, props.user.id);
+                                       usersAPI.follow(props.user.id)
+                                           .then(data => {
+                                               if (data.resultCode === 0) {
+                                                   props.follow(props.user.id)
+                                               }
+                                               props.toggleIsFollowUser(false, props.user.id);
+                                           });
+                                   }}>Follow</button>}
             </div>
             <div className={styles.userInfo}>
                 <NavLink className={styles.userProfileLink} to={`/profile/${props.user.id}`}>

@@ -32,14 +32,15 @@
 }
 
 .userItem .bgPhoto .subscription {
-    padding: 2px 10px;
+    padding: 4px 10px;
     background-color: #ffffff;
-    opacity: 0.6;
+    opacity: 1;
     border-radius: 2px;
     position: absolute;
     right: 20px;
     top: 10px;
-    color: #3d3f7a;
+    /*color: #3d3f7a;*/  /*temporarily commented so that was see that button disabled*/
+    border:none;
 }
 
 .userItem .bgPhoto .subscription:hover {
