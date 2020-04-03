@@ -3,17 +3,10 @@ import Login from "./Login";
 import {connect} from "react-redux";
 import {exitFromProfile, setAuthUser} from "../../redux/auth-reducer";
 import LoginAuth from "./LoginAuth/LoginAuth";
-import {usersAPI} from "../../API/API";
 
 class LoginContainer extends React.Component {
     componentDidMount() {
-        usersAPI.auth()
-            .then(data => {
-                let {id, login, email} = data.data;
-                if (data.resultCode === 0) {
-                    this.props.setAuthUser(id, email, login);
-                }
-            })
+        this.props.setAuthUser();
     }
     render() {
         return this.props.isAuth
