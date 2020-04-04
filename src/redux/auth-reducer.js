@@ -1,4 +1,4 @@
-import {usersAPI} from "../API/API";
+import {usersAPI} from "../api/api";
 
 const SET_AUTH_USER = 'SET_AUTH_USER';
 const EXIT_FROM_PROFILE = 'EXIT_FROM_PROFILE';

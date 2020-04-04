@@ -10,7 +10,8 @@ import Settings from "./components/Settings/Settings";
 import Dialogs from "./components/Dialogs/Dialogs";
 import UsersContainer from "./components/Users/UsersContainer";
 import ProfileContainer from "./components/Profile/ProfileContainer";
-import LoginContainer from "./components/Login/LoginContainer";
+import LoginContainer from "./components/Login/LoginForm/LoginFormContainer";
+import Login from "./components/Login/Login";
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
             <LoginContainer />
             <Navbar/>
             <div className='mainBlockWrap'>
+                <Route path={'/login'} render={() => <Login/>} />
                 <Route  path='/home' render={() => <Main/> } />
                 <Route  path='/profile/:userId?' render={() => <ProfileContainer/> }/>
                 <Route  path='/news' render={() => <News/> }/>

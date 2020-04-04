@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../Login.module.css";
+import styles from "../LoginForm/LoginForm.module.css";
 import avatar from "../../../images/avatar.jpg";
 const LoginAuth = (props) => {
     return (
