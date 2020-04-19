@@ -1,4 +1,4 @@
-import {usersAPI} from "../api/api";
+import {authAPI} from "../api/api";
 
 const SET_AUTH_USER = 'SET_AUTH_USER';
 const EXIT_FROM_PROFILE = 'EXIT_FROM_PROFILE';
@@ -34,7 +34,7 @@ export const exitFromProfile = () => ({type:EXIT_FROM_PROFILE});
 
 export const setAuthUser = () => {
     return (dispatch) => {
-        usersAPI.auth()
+        authAPI.auth()
             .then(data => {
                 let {id, login, email} = data.data;
                 if (data.resultCode === 0) {

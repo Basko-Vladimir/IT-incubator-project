@@ -18,7 +18,9 @@ const  Profile = (props) => {
             </div>
             <div className={styles.profileBlock}>
                 <MyPostsContainer />
-                <ProfileInfo profile={props.profile}/>
+                <ProfileInfo profile={props.profile}
+                             status={props.status}
+                             updateUserStatus={props.updateUserStatus}/>
             </div>
         </div>
     )

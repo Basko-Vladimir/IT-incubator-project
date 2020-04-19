@@ -9,7 +9,7 @@ const ProfileInfo = (props) => {
         <div className={styles.profileInfo}>
             <div className={styles.name}>
                 <span>{props.profile.fullName}</span>
-                <ProfileStatus status={'This is my status'}/>
+                <ProfileStatus status={props.status} updateUserStatus={props.updateUserStatus}/>
             </div>
             <Info content={props.profile.aboutMe ? props.aboutMe: 'Lorem ipsum dolor sit amet, consectetur'}
                   header={"About Me"}/>
