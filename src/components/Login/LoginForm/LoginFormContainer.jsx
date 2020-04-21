@@ -1,4 +1,5 @@
 import React from "react";
+import styles from "./LoginForm.module.css";
 import LoginForm from "./LoginForm";
 import {connect} from "react-redux";
 import {exitFromProfile, setAuthUser} from "../../../redux/auth-reducer";
@@ -9,9 +10,15 @@ class LoginFormContainer extends React.Component {
         this.props.setAuthUser();
     }
     render() {
-        return this.props.isAuth
-            ? <LoginAuth userData={this.props.userData} exitFromProfile={this.props.exitFromProfile}/>
-            : <LoginForm/>
+        return (
+            <div className={styles.loginWrap}>
+                {
+                    this.props.isAuth
+                    ? <LoginAuth userData={this.props.userData} exitFromProfile={this.props.exitFromProfile}/>
+                    : <LoginForm/>
+                }
+            </div>
+        )
     }
 }
 

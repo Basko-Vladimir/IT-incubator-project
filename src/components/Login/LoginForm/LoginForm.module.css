@@ -1,43 +1,50 @@
-.login{
+.loginWrap{
     grid-area: login;
     background-color: #ffffff;
     display: grid;
-    grid-template-rows: 1fr;
+}
+
+.loginWrap h3{
+  margin: 0;
+}
+
+.loginForm {
+    height: 100%;
+    display: grid;
     justify-content: center;
     justify-items: center;
+    grid-template-rows: 2fr 2fr 2fr 3fr;
 }
 
-.login .loginForm,
-.login .loginAuth{
+.loginAuth{
     display: grid;
+    justify-content: center;
     justify-items: center;
-    grid-template-rows: 2fr 2fr 2fr 2fr 1fr;
-    align-content: space-evenly;
-    /*width:85%;*/
-}
-
-.login .loginAuth{
     grid-template-rows: 4fr 1fr 1fr 1fr ;
     align-items: center;
 }
 
-.login .header{
+.header{
     display: grid;
     justify-content: center;
     align-content: center;
-    /*padding-top: 10px;*/
     color: #515365;
     width: 100%;
-
 }
 
-.login .loginForm .inputs{
+.loginForm .inputs{
     height: 25px;
 }
 
-.login .loginForm .submitBtn,
-.login .loginAuth .editProfile{
+.loginForm .rememberMe{
+    cursor: pointer;
+    justify-self: flex-start;
+}
+
+.loginForm .submitBtn,
+.loginAuth .editProfile{
     align-content: center;
+    align-self: center;
     height: 31px;
     color: #ffffff;
     background-color: #3F4257;
@@ -45,18 +52,17 @@
     width: 100%;
 }
 
-.login .loginAuth .editProfile{
+.loginAuth .editProfile{
     align-self: start;
 }
 
-.login .loginAuth .exit{
+.loginAuth .exit{
     justify-self: end;
     color: #8689A6;
 }
 
-.login .loginAuth .editProfile:hover,
-.login .loginAuth .exit:hover{
+.loginAuth .editProfile:hover,
+.loginAuth .exit:hover{
     cursor:pointer
 }
-
 
