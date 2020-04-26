@@ -1,11 +1,11 @@
 .dialogsWrap{
     display: grid;
-    grid-template-rows: 1fr auto;
     grid-gap: 10px;
 }
 
 .dialogsWrap .dialogsBlock{
     display: grid;
+    height: calc(100vh - 210px);
     grid-gap: 10px;
     grid-template-columns: 5fr 2fr;
 }

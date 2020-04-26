@@ -38,20 +38,16 @@
 
 .messageCreate .buttonBlock .addPostBtn{
     width: 100px;
-    height: 25px;
+    height:30px;
     background-color: #3F4257;
     text-align: center;
     color: white;
     font-size: 14px;
-    padding: 5px;
-    border-radius: 5px;
+    border: none;
+    border-radius: 3px;
     display: grid;
     align-content: center;
-}
-
-.messageCreate .buttonBlock:hover{
     cursor: pointer;
 }
-
 
 

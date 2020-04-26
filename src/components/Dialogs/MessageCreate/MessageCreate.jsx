@@ -2,28 +2,35 @@ import React from "react";
 import avatar from "../../../images/avatar.jpg";
 import styles from "./MessageCreate.module.css";
 import PropTypes from "prop-types";
+import {Field, reduxForm} from "redux-form";
 
 const MessageCreate = (props) => {
-    let onAddNewMessage = () => {
-        props.addNewMessage()
+
+    let addNewMessage = (value) => {
+        props.addNewMessage(value.newMessageText);
     };
 
-    let onChangeNewMessageText = (event) => {
-        let newText = event.target.value;
-        props.changeNewMessageText(newText);
-    };
     return (
         <div className={styles.messageCreate}>
             <img className={styles.avatar} src={avatar} alt='avatar'/>
-            <textarea onChange={onChangeNewMessageText} value={props.newMessageText} className={styles.textarea}/>
-            <div className={styles.buttonBlock}>
-                <div onClick={onAddNewMessage} className={styles.addPostBtn}>
-                    <span>Add Message</span>
-                </div>
-            </div>
+            <MessageCreateFormRedux onSubmit={addNewMessage} />
         </div>
     )
 };
+
+const MessageCreateForm = (props) => {
+
+    return (
+        <form onSubmit={props.handleSubmit}>
+            <Field name={'newMessageText'} component={'textarea'} className={styles.textarea}/>
+            <div className={styles.buttonBlock}>
+                <button className={styles.addPostBtn}>Add Message</button>
+            </div>
+        </form>
+    )
+};
+
+const MessageCreateFormRedux = reduxForm({form:'MessageCreateForm'})(MessageCreateForm);
 
 export default MessageCreate;
 

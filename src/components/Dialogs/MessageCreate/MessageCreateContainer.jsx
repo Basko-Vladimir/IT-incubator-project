@@ -1,25 +1,15 @@
 import MessageCreate from "./MessageCreate";
 import {connect} from "react-redux";
-import {addNewMessageAC, changeNewMessageTextAC} from "../../../redux/dialogs-reducer";
-
-let mapStateToProps = (state) => {
-    return {
-        newMessageText: state.dialogsPage.newMessageText
-    }
-};
+import {addNewMessageAC} from "../../../redux/dialogs-reducer";
 
 let mapDispatchToProps= (dispatch) => {
     return {
-        addNewMessage: () => {
-            dispatch(addNewMessageAC());
-        },
-        changeNewMessageText: (newText) => {
-            dispatch(changeNewMessageTextAC(newText))
+        addNewMessage: (newMessageText) => {
+            dispatch(addNewMessageAC(newMessageText));
         }
     }
 };
 
-
-const MessageCreateContainer = connect(mapStateToProps, mapDispatchToProps)(MessageCreate);
+const MessageCreateContainer = connect( null, mapDispatchToProps)(MessageCreate);
 
 export default MessageCreateContainer;
