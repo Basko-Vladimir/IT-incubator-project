@@ -2,31 +2,35 @@ import React from "react";
 import styles from "./PostCreate.module.css";
 import avatar from "../../../../images/avatar.jpg";
 import PropTypes from "prop-types";
+import {Field, reduxForm} from "redux-form";
 
 const PostCreate = (props) => {
     let userPhoto = props.profilePage.profile.photos.small;
 
-    let onAddNewPost = () => {
-        props.addNewPost();
-    };
-
-    let onChangeNewPostText = (event) => {
-        let newText = event.target.value;
-        props.changeNewPostText(newText);
+    let AddNewPost = (value) => {
+        props.addNewPost(value.newPostText);
     };
 
     return(
         <div className={styles.postCreate}>
             <img className={styles.avatar} src={userPhoto ? userPhoto : avatar} alt='avatar'/>
-            <textarea  onChange={onChangeNewPostText} value={props.profilePage.newPostText} className={styles.textarea}/>
-            <div className={styles.buttonBlock}>
-                <div onClick={onAddNewPost} className={styles.addPostBtn}>
-                    <span>Add Post</span>
-                </div>
-            </div>
+            <PostCreateFormRedux onSubmit={AddNewPost} />
         </div>
     )
 };
+
+const PostCreateForm = (props) => {
+    return (
+        <form onSubmit={props.handleSubmit}>
+            <Field name={'newPostText'} component={'textarea'} className={styles.textarea}/>
+            <div className={styles.buttonBlock}>
+                <button className={styles.addPostBtn}>Add Post</button>
+            </div>
+        </form>
+    )
+};
+
+const PostCreateFormRedux = reduxForm({form: 'PostCreateForm'})(PostCreateForm);
 
 export default PostCreate;
 

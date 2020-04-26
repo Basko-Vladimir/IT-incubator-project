@@ -1,8 +1,6 @@
 import PostCreate from "./PostCreate";
 import {connect} from "react-redux";
-import {addNewPostAC, changeNewPostTextAC} from "../../../../redux/profile-reducer";
-
-
+import {addNewPostAC} from "../../../../redux/profile-reducer";
 
 let mapStateToProps = (state) => {
     return {
@@ -12,11 +10,8 @@ let mapStateToProps = (state) => {
 
 let mapDispatchToProps = (dispatch) => {
     return {
-        addNewPost: () => {
-            dispatch(addNewPostAC());
-        },
-        changeNewPostText: (newText) => {
-            dispatch(changeNewPostTextAC(newText));
+        addNewPost: (newPostText) => {
+            dispatch(addNewPostAC(newPostText));
         }
     }
 };
