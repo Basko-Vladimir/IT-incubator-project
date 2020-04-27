@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 import {Field, reduxForm} from "redux-form";
 import Button from "../../common/Button/Button";
 import {maxLengthCreator, required} from "../../../utilities/validators";
-import {Textarea} from "../../common/FormControl/FormControl";
+import {FormElement} from "../../common/FormControl/FormControl";
 
 const MessageCreate = (props) => {
 
@@ -27,7 +27,8 @@ const MessageCreateForm = (props) => {
     return (
         <form onSubmit={props.handleSubmit} className={styles.form}>
             <Field name={'newMessageText'}
-                   component={Textarea}
+                   component={FormElement}
+                   type={'textarea'}
                    placeholder={'Enter your message'}
                    validate={[required, maxLength]} />
             <div className={styles.buttonBlock}>

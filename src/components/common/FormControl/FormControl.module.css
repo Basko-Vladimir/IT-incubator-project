@@ -6,6 +6,10 @@
     resize: none;
 }
 
+.input {
+    height: 25px;
+}
+
 .error {
     border: 1px solid red;
 }
