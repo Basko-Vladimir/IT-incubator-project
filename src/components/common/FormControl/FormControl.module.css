@@ -1,0 +1,15 @@
+.textarea {
+    width:calc(100% - 5px);
+    height:40px;
+    border: 1px #cec9d1 solid;
+    border-radius: 5px;
+    resize: none;
+}
+
+.error {
+    border: 1px solid red;
+}
+
+.errorText {
+    color:red;
+}

@@ -22,10 +22,6 @@ const MessageItem = (props) => {
 
 export default MessageItem;
 
-MessageItem.propTypes= {
-    message: PropTypes.string
-};
-
 MessageItem.propTypes = {
-    message: 'Empty message text!!!'
+    message: PropTypes.string
 };

@@ -4,6 +4,8 @@ import avatar from "../../../../images/avatar.jpg";
 import PropTypes from "prop-types";
 import {Field, reduxForm} from "redux-form";
 import Button from "../../../common/Button/Button";
+import {maxLengthCreator, required} from "../../../../utilities/validators";
+import {Textarea} from "../../../common/FormControl/FormControl";
 
 const PostCreate = (props) => {
     let userPhoto = props.profilePage.profile.photos.small;
@@ -20,10 +22,14 @@ const PostCreate = (props) => {
     )
 };
 
+const maxLength = maxLengthCreator(10);
+
 const PostCreateForm = (props) => {
     return (
         <form onSubmit={props.handleSubmit} className={styles.form}>
-            <Field name={'newPostText'} component={'textarea'} className={styles.textarea}/>
+            <Field name={'newPostText'}
+                   validate={[required, maxLength]}
+                   component={Textarea} />
             <div className={styles.buttonBlock}>
                 <Button name={'Add Post'}/>
             </div>
