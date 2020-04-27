@@ -1,53 +1,34 @@
 .messageCreate{
     background-color: #ffffff;
     display: grid;
-    grid-template-areas: "ava txt"
-    "btn btn";
-    grid-template-rows: 2fr 1fr;
     grid-template-columns: 1fr 9fr;
-    justify-content: center;
-    align-content: center;
     border-radius: 5px;
     padding: 10px 25px 10px 25px;
 }
 
 .messageCreate .avatar{
-    grid-area: ava;
-    justify-self: start;
-    align-self: center;
     width: 50px;
     border-radius: 25px;
     margin-right: 20px;
 }
 
-.messageCreate .textarea{
-    grid-area: txt;
-    justify-self: end;
-    align-self: center;
-    width:100%;
-    height:50px;
+.messageCreate .form {
+    display: grid;
+    grid-template-rows: 1fr auto;
+}
+
+.messageCreate .form .textarea{
+    width:calc(100% - 5px);
+    height:40px;
     border: 1px #cec9d1 solid;
     border-radius: 5px;
     resize: none;
 }
 
-.messageCreate .buttonBlock{
-    grid-area: btn;
+.messageCreate .form .buttonBlock{
+    margin-top: 10px;
     justify-self: end;
 }
 
-.messageCreate .buttonBlock .addPostBtn{
-    width: 100px;
-    height:30px;
-    background-color: #3F4257;
-    text-align: center;
-    color: white;
-    font-size: 14px;
-    border: none;
-    border-radius: 3px;
-    display: grid;
-    align-content: center;
-    cursor: pointer;
-}
 
 

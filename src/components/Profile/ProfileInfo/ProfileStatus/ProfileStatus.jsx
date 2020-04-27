@@ -6,9 +6,8 @@ class ProfileStatus extends React.Component {
         status: this.props.status
     };
 
-    componentDidUpdate(prevProps, prevState) {
+    componentDidUpdate(prevProps, prevState, snapshot) {
         if (prevProps.status !== this.props.status) {
-            debugger
             this.setState({
                 state: this.props.status
             })

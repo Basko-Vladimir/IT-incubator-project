@@ -3,6 +3,7 @@ import styles from "./PostCreate.module.css";
 import avatar from "../../../../images/avatar.jpg";
 import PropTypes from "prop-types";
 import {Field, reduxForm} from "redux-form";
+import Button from "../../../common/Button/Button";
 
 const PostCreate = (props) => {
     let userPhoto = props.profilePage.profile.photos.small;
@@ -21,10 +22,10 @@ const PostCreate = (props) => {
 
 const PostCreateForm = (props) => {
     return (
-        <form onSubmit={props.handleSubmit}>
+        <form onSubmit={props.handleSubmit} className={styles.form}>
             <Field name={'newPostText'} component={'textarea'} className={styles.textarea}/>
             <div className={styles.buttonBlock}>
-                <button className={styles.addPostBtn}>Add Post</button>
+                <Button name={'Add Post'}/>
             </div>
         </form>
     )

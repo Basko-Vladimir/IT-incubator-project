@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./LoginForm.module.css";
 import {Field, reduxForm} from "redux-form";
+import Button from "../../common/Button/Button";
 
 const Form = (props) => {
     return (
@@ -10,7 +11,9 @@ const Form = (props) => {
             <label className={styles.rememberMe}>
                 <Field type='checkbox'  placeholder='Password' name={'rememberMe'} component={'input'}/> Remember me
             </label>
-            <input type='submit' value='Enter' className={styles.submitBtn}/>
+            <div>
+                <Button name={'Enter'} />
+            </div>
         </form>
     )
 };

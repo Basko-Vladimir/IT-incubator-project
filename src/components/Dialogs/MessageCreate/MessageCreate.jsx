@@ -3,6 +3,7 @@ import avatar from "../../../images/avatar.jpg";
 import styles from "./MessageCreate.module.css";
 import PropTypes from "prop-types";
 import {Field, reduxForm} from "redux-form";
+import Button from "../../common/Button/Button";
 
 const MessageCreate = (props) => {
 
@@ -21,10 +22,10 @@ const MessageCreate = (props) => {
 const MessageCreateForm = (props) => {
 
     return (
-        <form onSubmit={props.handleSubmit}>
+        <form onSubmit={props.handleSubmit} className={styles.form}>
             <Field name={'newMessageText'} component={'textarea'} className={styles.textarea}/>
             <div className={styles.buttonBlock}>
-                <button className={styles.addPostBtn}>Add Message</button>
+                <Button name={'Add message'}/>
             </div>
         </form>
     )

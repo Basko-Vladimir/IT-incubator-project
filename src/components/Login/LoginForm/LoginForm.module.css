@@ -41,28 +41,9 @@
     justify-self: flex-start;
 }
 
-.loginForm .submitBtn,
-.loginAuth .editProfile{
-    align-content: center;
-    align-self: center;
-    height: 31px;
-    color: #ffffff;
-    background-color: #3F4257;
-    border: none;
-    width: 100%;
-}
-
-.loginAuth .editProfile{
-    align-self: start;
-}
-
 .loginAuth .exit{
     justify-self: end;
     color: #8689A6;
-}
-
-.loginAuth .editProfile:hover,
-.loginAuth .exit:hover{
-    cursor:pointer
+    cursor: pointer;
 }
 
