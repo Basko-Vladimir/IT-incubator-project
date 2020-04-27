@@ -1,9 +1,22 @@
 import React from "react";
+import {Redirect} from "react-router-dom";
+import {connect} from "react-redux";
 
-const Login = () => {
+const Login = (props) => {
+    if (props.isAuth){
+        console.log(props.isAuth);
+        return <Redirect to={'/profile'}/>
+    }
+
     return (
         <h1>LOGIN</h1>
     )
 };
 
-export default Login;
+const mapStateToProps = (state) => {
+    return {
+        isAuth: state.auth.userData.isAuth
+    }
+};
+
+export default connect(mapStateToProps, null)(Login);

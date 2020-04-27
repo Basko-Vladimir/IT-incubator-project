@@ -5,6 +5,7 @@ import Button from "../../common/Button/Button";
 import {FormElement} from "../../common/FormControl/FormControl";
 import {required} from "../../../utilities/validators";
 
+
 const Form = (props) => {
     return (
         <form onSubmit={props.handleSubmit} className={styles.loginForm}>
@@ -13,7 +14,7 @@ const Form = (props) => {
                    validate={[required]}
                    name={'email'}
                    placeholder='E-mail'/>
-            <Field type='password'
+            <Field type='text'
                    component={FormElement}
                    validate={[required]}
                    name={'password'}
@@ -25,7 +26,7 @@ const Form = (props) => {
                        component={'input'}/> Remember me
             </label>
             <div>
-                <Button name={'Enter'} />
+                <Button name={'Enter'}/>
             </div>
         </form>
     )
@@ -35,16 +36,17 @@ const LoginReduxForm = reduxForm({
     form: 'login'
 })(Form);
 
-const LoginForm = () => {
+const LoginForm = (props) => {
     const onSubmit = (data) => {
-          console.log(data);
+        let {email, password, rememberMe} = data;
+        props.login(email, password, rememberMe);
     };
 
     return (
-        <>
+        <div className={styles.loginFormWrap}>
             <h3 className={styles.header}>Authorization</h3>
-            <LoginReduxForm onSubmit={onSubmit} />
-        </>
+            <LoginReduxForm onSubmit={onSubmit}/>
+        </div>
     )
 };
 

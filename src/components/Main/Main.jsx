@@ -1,6 +1,8 @@
 import React from "react";
 import styles from "./Main.module.css";
 import PhotoBG from "./PhotoBG/PhotoBG";
+import {compose} from "redux";
+import withAuthRedirect from "../../hoc/withAuthRedirect";
 
 const Main = () => {
   return (
@@ -20,4 +22,4 @@ const Main = () => {
   )
 };
 
-export default Main;
+export default compose(withAuthRedirect)(Main);

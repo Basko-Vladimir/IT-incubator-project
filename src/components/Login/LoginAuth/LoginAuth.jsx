@@ -11,7 +11,7 @@ const LoginAuth = (props) => {
             <div>
                 <Button name={'Edit profile'}/>
             </div>
-            <div onClick={props.exitFromProfile} className={styles.exit}>Exit</div>
+            <div onClick={props.logout} className={styles.exit}>Exit</div>
         </div>
     )
 };

@@ -7,9 +7,10 @@ let initialState = {
     userData:{
         userId:null,
         email:null,
-        login:null
-    },
-    isAuth: false
+        login:null,
+        isAuth: false
+    }
+
 };
 
 const authReducer = (state = initialState, action) => {
@@ -17,8 +18,7 @@ const authReducer = (state = initialState, action) => {
         case SET_AUTH_USER:
             return{
                 ...state,
-                userData: {...state.userData, ...action.userData},
-                isAuth: true
+                userData: {...state.userData, ...action.userData}
             };
         case EXIT_FROM_PROFILE:
             return {
@@ -29,16 +29,40 @@ const authReducer = (state = initialState, action) => {
     }
 };
 
-const setAuthUserAC = (userId, email, login) => ({type:SET_AUTH_USER, userData:{userId, email, login}});
+const setAuthUserAC = (userId, email, login, isAuth) => ({type:SET_AUTH_USER, userData:{userId, email, login, isAuth}});
+
 export const exitFromProfile = () => ({type:EXIT_FROM_PROFILE});
 
 export const setAuthUser = () => {
     return (dispatch) => {
-        authAPI.auth()
+        authAPI.authMe()
             .then(data => {
                 let {id, login, email} = data.data;
                 if (data.resultCode === 0) {
-                    dispatch(setAuthUserAC(id, email, login));
+                    dispatch(setAuthUserAC(id, email, login, true));
+                }
+            })
+    }
+};
+
+export const login = (email, password, rememberMe) => {
+
+    return (dispatch) => {
+        authAPI.login(email, password, rememberMe)
+            .then(data => {
+                if (data.resultCode === 0) {
+                    dispatch(setAuthUser());
+                }
+            })
+    }
+};
+
+export const logout = () => {
+    return (dispatch) => {
+        authAPI.logout()
+            .then( data => {
+                if (data.resultCode === 0) {
+                    dispatch(setAuthUserAC(null, null, null, false))
                 }
             })
     }

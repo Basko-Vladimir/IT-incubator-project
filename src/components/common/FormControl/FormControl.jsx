@@ -9,7 +9,7 @@ export const FormElement = ({input, meta, ...restProps}) => {
                 ? <textarea {...input} {...restProps} className={ `${styles.textarea} ${hasError && styles.error}` }/>
                 : <input {...input} {...restProps} className={ `${styles.input} ${hasError && styles.error}` }/>
             }
-            {hasError && <div className={styles.errorText}>erge</div>}
+            {hasError && <div className={styles.errorText}>{meta.error}</div>}
         </div>
     )
 };
