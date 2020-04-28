@@ -2,13 +2,10 @@ import React from "react";
 import styles from "./LoginForm.module.css";
 import LoginForm from "./LoginForm";
 import {connect} from "react-redux";
-import {exitFromProfile, login, logout, setAuthUser} from "../../../redux/auth-reducer";
+import {exitFromProfile, login, logout} from "../../../redux/auth-reducer";
 import LoginAuth from "../LoginAuth/LoginAuth";
 
 class LoginFormContainer extends React.Component {
-    componentDidMount() {
-        this.props.setAuthUser();
-    }
     render() {
         return (
             <div className={styles.loginWrap}>
@@ -29,4 +26,4 @@ let mapStateToProps = (state) => {
     }
 };
 
-export default connect(mapStateToProps, {setAuthUser, login, logout, exitFromProfile})(LoginFormContainer);
+export default connect(mapStateToProps, {login, logout, exitFromProfile})(LoginFormContainer);

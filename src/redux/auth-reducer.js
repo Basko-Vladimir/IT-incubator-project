@@ -34,30 +34,25 @@ const setAuthUserAC = (userId, email, login, isAuth) => ({type:SET_AUTH_USER, us
 
 export const exitFromProfile = () => ({type:EXIT_FROM_PROFILE});
 
-export const setAuthUser = () => {
-    return (dispatch) => {
-        authAPI.authMe()
-            .then(data => {
-                let {id, login, email} = data.data;
-                if (data.resultCode === 0) {
-                    dispatch(setAuthUserAC(id, email, login, true));
-                }
-            })
-    }
+export const setAuthUser = () => (dispatch) => {
+    return authAPI.authMe()
+        .then(data => {
+            let {id, login, email} = data.data;
+            if (data.resultCode === 0) {
+                dispatch(setAuthUserAC(id, email, login, true));
+            }
+        })
 };
 
-export const login = (email, password, rememberMe) => {
-
-    return (dispatch) => {
-        authAPI.login(email, password, rememberMe)
-            .then(data => {
-                if (data.resultCode === 0) {
-                    dispatch(setAuthUser());
-                } else {
-                    dispatch(stopSubmit('login', {_error: data.messages[0] || 'Some error' }))
-                }
-            })
-    }
+export const login = (email, password, rememberMe) => (dispatch) => {
+    authAPI.login(email, password, rememberMe)
+        .then(data => {
+            if (data.resultCode === 0) {
+                dispatch(setAuthUser());
+            } else {
+                dispatch(stopSubmit('login', {_error: data.messages[0] || 'Some error'}))
+            }
+        })
 };
 
 export const logout = () => {
