@@ -43,6 +43,10 @@
     justify-self: flex-start;
 }
 
+.loginForm .formError {
+    color: red;
+}
+
 .loginAuth .exit{
     justify-self: end;
     color: #8689A6;

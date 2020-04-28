@@ -14,7 +14,7 @@ const Form = (props) => {
                    validate={[required]}
                    name={'email'}
                    placeholder='E-mail'/>
-            <Field type='text'
+            <Field type='password'
                    component={FormElement}
                    validate={[required]}
                    name={'password'}
@@ -25,6 +25,7 @@ const Form = (props) => {
                        name={'rememberMe'}
                        component={'input'}/> Remember me
             </label>
+            { props.error && <div className={styles.formError}>{props.error}</div> }
             <div>
                 <Button name={'Enter'}/>
             </div>
