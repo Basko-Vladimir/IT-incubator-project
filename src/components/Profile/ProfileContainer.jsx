@@ -11,10 +11,9 @@ class ProfileContainer extends React.Component {
         if (!userId) {
             userId = this.props.authorizedUserId;
             if (!userId){
-                this.props.history.push('login');  // Не лучший вариант перенаправления (лучший через <Redirect>), но сделали для ознакомления
+                this.props.history.push('/login');  // Не лучший вариант перенаправления (лучше через <Redirect>), но сделали так для ознакомления
             }
         }
-        debugger
         this.props.setUserProfile(userId);
         this.props.setUserStatus(userId);
     }

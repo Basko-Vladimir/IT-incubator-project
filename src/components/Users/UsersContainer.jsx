@@ -1,7 +1,15 @@
 import {connect} from "react-redux";
-import {follow, getUsers, setCurrentPage, unfollow} from "../../redux/users-reducer";
+import {follow, requestUsers, setCurrentPage, unfollow} from "../../redux/users-reducer";
 import Users from "./Users";
 import React from "react";
+import {
+    getCurrentPage,
+    getIsFetching,
+    getIsFollowUser,
+    getPageSize,
+    getTotalCount,
+    getUsers
+} from "../../redux/users-selectors";
 
 class UsersContainer extends React.Component {
     componentDidMount() {
@@ -27,14 +35,14 @@ class UsersContainer extends React.Component {
 
 let mapStateToProps = (state) => {
     return {
-        users: state.usersPage.users,
-        currentPage: state.usersPage.currentPage,
-        pageSize: state.usersPage.pageSize,
-        totalCount: state.usersPage.totalCount,
-        isFetching: state.usersPage.isFetching,
-        isFollowUser: state.usersPage.isFollowUser
+        users: getUsers(state),
+        currentPage: getCurrentPage(state),
+        pageSize: getPageSize(state),
+        totalCount: getTotalCount(state),
+        isFetching: getIsFetching(state),
+        isFollowUser: getIsFollowUser(state)
     }
 };
 
-export default connect(mapStateToProps, {follow, unfollow, setCurrentPage, getUsers})(UsersContainer);
+export default connect(mapStateToProps, {follow, unfollow, setCurrentPage, getUsers: requestUsers})(UsersContainer);
 
