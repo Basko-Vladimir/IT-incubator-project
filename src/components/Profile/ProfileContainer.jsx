@@ -4,7 +4,6 @@ import {connect} from "react-redux";
 import {setUserProfile, setUserStatus, updateUserStatus,} from "../../redux/profile-reducer";
 import {withRouter} from "react-router-dom";
 import {compose} from "redux";
-import withAuthRedirect from "../../hoc/withAuthRedirect";
 
 class ProfileContainer extends React.Component {
     componentDidMount() {
@@ -12,9 +11,10 @@ class ProfileContainer extends React.Component {
         if (!userId) {
             userId = this.props.authorizedUserId;
             if (!userId){
-
+                this.props.history.push('login');  // Не лучший вариант перенаправления (лучший через <Redirect>), но сделали для ознакомления
             }
         }
+        debugger
         this.props.setUserProfile(userId);
         this.props.setUserStatus(userId);
     }
@@ -37,5 +37,4 @@ let mapStateToProps = (state) => {
 };
 
 export default compose(connect(mapStateToProps, {setUserProfile, setUserStatus, updateUserStatus}),
-                       withRouter,
-                       withAuthRedirect)(ProfileContainer);
+                       withRouter)(ProfileContainer);

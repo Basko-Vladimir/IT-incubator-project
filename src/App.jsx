@@ -31,7 +31,7 @@ class App extends React.Component {
                 <LoginFormContainer/>
                 <Navbar/>
                 <div className='mainBlockWrap'>
-                    <Route path={'/'} render={() => <Login/>}/>
+                    <Route path={'/login'} render={() => <Login/>}/>
                     <Route path='/home' render={() => <Main/>}/>
                     <Route path='/profile/:userId?' render={() => <ProfileContainer/>}/>
                     <Route path='/news' render={() => <News/>}/>
