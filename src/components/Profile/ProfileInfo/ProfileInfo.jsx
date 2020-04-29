@@ -1,7 +1,8 @@
 import React from "react";
 import styles from "./ProfileInfo.module.css";
 import Info from "./Info/Info";
-import ProfileStatus from "./ProfileStatus/ProfileStatus";
+import ProfileStatus from "./ProfileStatus/ProfileStatus";     // сделано 2 варианта компонент классовая и функц. на хуках
+import ProfileStatusWithHooks from "./ProfileStatus/ProfileStatusWithHooks";
 
 
 const ProfileInfo = (props) => {
@@ -9,7 +10,7 @@ const ProfileInfo = (props) => {
         <div className={styles.profileInfo}>
             <div className={styles.name}>
                 <span>{props.profile.fullName}</span>
-                <ProfileStatus status={props.status} updateUserStatus={props.updateUserStatus}/>
+                <ProfileStatusWithHooks status={props.status} updateUserStatus={props.updateUserStatus}/>
             </div>
             <Info content={props.profile.aboutMe ? props.aboutMe: 'Lorem ipsum dolor sit amet, consectetur'}
                   header={"About Me"}/>
