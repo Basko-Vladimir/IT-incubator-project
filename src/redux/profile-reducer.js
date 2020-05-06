@@ -1,8 +1,8 @@
 import {profileAPI, usersAPI} from "../api/api";
 
-const ADD_NEW_POST = 'ADD_NEW_POST';
-const SET_USER_PROFILE = 'SET_USER_PROFILE';
-const SET_USER_STATUS = 'SET_USER_STATUS';
+const ADD_NEW_POST = 'social-network/profile/ADD_NEW_POST';
+const SET_USER_PROFILE = 'social-network/profile/SET_USER_PROFILE';
+const SET_USER_STATUS = 'social-network/profile/SET_USER_STATUS';
 
 let initialState = {
     posts: [
@@ -40,39 +40,26 @@ const profileReducer = (state = initialState, action) => {
         default:
             return state
     }
-
 };
 
 export const addNewPostAC = (newPostText) => ({type: ADD_NEW_POST, newPostText});
 const setUserProfileAC = (userProfile) => ({type: SET_USER_PROFILE, userProfile});
 const setUserStatusAC = (status) => ({type: SET_USER_STATUS, status});
 
-export const setUserProfile = (userId) => {
-    return (dispatch) => {
-        usersAPI.getUserProfile(userId)
-            .then(data => {
-                dispatch(setUserProfileAC(data));
-            })
-    }
+export const setUserProfile = (userId) => async (dispatch) => {
+    const data = await usersAPI.getUserProfile(userId);
+    dispatch(setUserProfileAC(data));
 };
 
-export const setUserStatus = (userId) => {
-    return (dispatch) => {
-        profileAPI.getUserStatus(userId)
-            .then(data => {
-                dispatch(setUserStatusAC(data));
-            })
-    }
+export const setUserStatus = (userId) => async (dispatch) => {
+    const data = await profileAPI.getUserStatus(userId);
+    dispatch(setUserStatusAC(data));
 };
 
-export const updateUserStatus = (status) => {
-    return (dispatch) => {
-        profileAPI.updateUserStatus(status)
-            .then(data => {
-                if (data.resultCode === 0) {
-                    dispatch(setUserStatusAC(status));
-                }
-            })
+export const updateUserStatus = (status) => async (dispatch) => {
+    const data = profileAPI.updateUserStatus(status);
+    if (data.resultCode === 0) {
+        dispatch(setUserStatusAC(status));
     }
 };
 

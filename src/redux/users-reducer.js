@@ -1,13 +1,12 @@
 import {usersAPI} from "../api/api";
 
-const FOLLOW = 'FOLLOW';
-const UNFOLLOW = 'UNFOLLOW';
-const SET_USERS = 'SET_USERS';
-const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE';
-const SET_TOTAL_USERS_COUNT = 'SET_TOTAL_USERS_COUNT';
-const TOGGLE_IS_FETCHING = 'TOGGLE_IS_FETCHING';
-const TOGGLE_IS_FOLLOW_USER = 'TOGGLE_IS_FOLLOW_USER';
-
+const FOLLOW = 'social-network/users/FOLLOW';
+const UNFOLLOW = 'social-network/users/UNFOLLOW';
+const SET_USERS = 'social-network/users/SET_USERS';
+const SET_CURRENT_PAGE = 'social-network/users/SET_CURRENT_PAGE';
+const SET_TOTAL_USERS_COUNT = 'social-network/users/SET_TOTAL_USERS_COUNT';
+const TOGGLE_IS_FETCHING = 'social-network/users/TOGGLE_IS_FETCHING';
+const TOGGLE_IS_FOLLOW_USER = 'social-network/users/TOGGLE_IS_FOLLOW_USER';
 
 let initialState = {
     users: [],
@@ -68,7 +67,6 @@ const usersReducer = (state = initialState, action) => {
                     : state.isFollowUser.filter( id => id !== action.userId)
             };
         default: return state;
-
     }
 };
 
@@ -80,56 +78,39 @@ const setTotalUsersCount = (totalCount) => ({type: SET_TOTAL_USERS_COUNT, totalC
 const toggleIsFetching = (isFetching) => ({type: TOGGLE_IS_FETCHING, isFetching});
 const toggleIsFollowUser = (isFollowUser, userId) => ({type: TOGGLE_IS_FOLLOW_USER, isFollowUser, userId});
 
-export const requestUsers = (pageSize, currentPage) => {
-    return (dispatch) => {
-        dispatch(toggleIsFetching(true));
-        usersAPI.getUsers(pageSize, currentPage)
-            .then(data => {
-                dispatch(setUsers(data.items));
-                dispatch(toggleIsFetching(false));
-                // dispatch.setTotalUsersCount(response.data.totalCount)); пока закомментил т.к. очень много
-                // пользователей, поэтому пока захардкодил 200
-            })
-    }
+export const requestUsers = (pageSize, currentPage) => async (dispatch) => {
+    dispatch(toggleIsFetching(true));
+    const data = await usersAPI.getUsers(pageSize, currentPage);
+    dispatch(setUsers(data.items));
+    dispatch(toggleIsFetching(false));
+    // dispatch.setTotalUsersCount(response.data.totalCount)); пока закомментил т.к. очень много
+    // пользователей, поэтому пока захардкодил 200
 };
 
-export const setCurrentPage = (pageSize, currentPage) => {
-    return (dispatch) => {
-        dispatch(setCurrentPageAC(currentPage));
-        dispatch(toggleIsFetching(true));
-        usersAPI.getUsers(pageSize, currentPage)
-            .then(data => {
-                dispatch(setUsers(data.items));
-                dispatch(toggleIsFetching(false));
-            })
-    }
+export const setCurrentPage = (pageSize, currentPage) => async (dispatch) => {
+    dispatch(setCurrentPageAC(currentPage));
+    dispatch(toggleIsFetching(true));
+    const data = await usersAPI.getUsers(pageSize, currentPage);
+    dispatch(setUsers(data.items));
+    dispatch(toggleIsFetching(false));
 };
 
-export const follow = (userId) => {
-    return (dispatch) => {
-        dispatch(toggleIsFollowUser(true, userId));
-        usersAPI.follow(userId)
-            .then(data => {
-                if (data.resultCode === 0) {
-                    dispatch(followAC(userId));
-                }
-                dispatch(toggleIsFollowUser(false, userId));
-            });
+export const follow = (userId) => async (dispatch) => {
+    dispatch(toggleIsFollowUser(true, userId));
+    const data = await usersAPI.follow(userId);
+    if (data.resultCode === 0) {
+        dispatch(followAC(userId));
     }
+    dispatch(toggleIsFollowUser(false, userId));
 };
 
-export const unfollow = (userId) => {
-    return (dispatch) => {
-        dispatch(toggleIsFollowUser(true, userId));
-        usersAPI.unfollow(userId)
-            .then(data => {
-                if (data.resultCode === 0) {
-                    dispatch(unfollowAC(userId))
-                }
-                dispatch(toggleIsFollowUser(false, userId));
-            });
+export const unfollow = (userId) => async (dispatch) => {
+    dispatch(toggleIsFollowUser(true, userId));
+    const data = await usersAPI.unfollow(userId);
+    if (data.resultCode === 0) {
+        dispatch(unfollowAC(userId))
     }
+    dispatch(toggleIsFollowUser(false, userId));
 };
-
 
 export default usersReducer;
