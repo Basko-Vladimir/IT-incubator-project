@@ -4,26 +4,18 @@ import UsersHeader from "./UsersHeader/UsersHeader";
 import UserItem from "./UserItem/UserItem";
 import PropTypes from "prop-types";
 import Preloader from "../common/Preloader/Preloader";
+import Pagination from "../common/Pagination/Pagination";
 
 const Users = (props) => {
-    let pagesCount = Math.ceil(props.totalCount / props.pageSize);
-    let pages = [];
-    for (let i = 1; i <= pagesCount; i++) {
-        pages.push(i);
-    }
-
     return (
         <div className={styles.userBlock}>
             {props.isFetching ? <Preloader/> : null}
             <UsersHeader usersCount={props.totalCount}/>
-            <div className={styles.usersWrap}>
-                <div className={styles.pagesNumberBlock}>
-                    {pages.map(u => {
-                        return <span key={u}
-                                     className={props.currentPage === u ? styles.active : ''}
-                                     onClick={() => props.onChangePage(u)}>{u} </span>
-                    })}
-                </div>
+            <div>
+                <Pagination totalCount={props.totalCount}
+                            pageSize={props.pageSize}
+                            onChangePage={props.onChangePage}
+                            currentPage={props.currentPage} />
                 <div className={styles.users}>
                     {props.users.map(u => <UserItem key={u.id}
                                                     user={u}

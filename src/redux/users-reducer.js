@@ -83,8 +83,7 @@ export const requestUsers = (pageSize, currentPage) => async (dispatch) => {
     const data = await usersAPI.getUsers(pageSize, currentPage);
     dispatch(setUsers(data.items));
     dispatch(toggleIsFetching(false));
-    // dispatch.setTotalUsersCount(response.data.totalCount)); пока закомментил т.к. очень много
-    // пользователей, поэтому пока захардкодил 200
+    dispatch(setTotalUsersCount(data.totalCount));
 };
 
 export const setCurrentPage = (pageSize, currentPage) => async (dispatch) => {

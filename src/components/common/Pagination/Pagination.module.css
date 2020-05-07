@@ -1,0 +1,19 @@
+.pagesNumberBlock {
+    text-align: center;
+    background-color: #ffffff;
+    padding: 20px;
+}
+.pagesNumberBlock span {
+    cursor: pointer;
+    font-size: 15px;
+    text-align: center;
+}
+
+.pagesNumberBlock span:hover {
+    text-decoration: underline;
+}
+
+.pagesNumberBlock .active {
+    font-weight: bold;
+}
+
