@@ -17,7 +17,7 @@ import {compose} from "redux";
 import {initializeApp} from "./redux/app-reducer";
 import Preloader from "./components/common/Preloader/Preloader";
 
-const Dialogs = lazy(import("./components/Dialogs/Dialogs"));
+const Dialogs = lazy(() => import("./components/Dialogs/Dialogs"));
 
 class App extends React.Component {
     componentDidMount() {
