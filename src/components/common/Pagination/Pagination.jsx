@@ -12,13 +12,15 @@ const Pagination = ({portionSize = 10, ...restProps}) => {
     const [portionNumber, setCurrentPortion] = useState(1);
     const leftPortionLimit = (portionNumber - 1) * portionSize + 1;
     const rightPortionLimit = portionNumber * portionSize;
+    const nextPageBtn = 'Next >';
+    const prevPageBtn = '< Previous';
 
     const switchPortion = (e) => {
         switch (e.currentTarget.innerText) {
-            case 'Next':
+            case nextPageBtn:
                 setCurrentPortion(portionNumber + 1);
                 break;
-            case 'Previous':
+            case prevPageBtn:
                 setCurrentPortion(portionNumber - 1);
                 break;
         }
@@ -26,7 +28,7 @@ const Pagination = ({portionSize = 10, ...restProps}) => {
 
     return (
         <div className={styles.pagesNumberBlock}>
-            {portionNumber > 1 && <span onClick={switchPortion}>Previous</span>}
+            {portionNumber > 1 && <span onClick={switchPortion}>{prevPageBtn}</span>}
             {pages.filter(page => page >= leftPortionLimit && page <= rightPortionLimit).map(page => {
                 return (
                     <span key={page}
@@ -34,7 +36,7 @@ const Pagination = ({portionSize = 10, ...restProps}) => {
                           onClick={() => restProps.onChangePage(page)}> {page} </span>
                 )
             })}
-            {portionAmount > portionNumber && <span onClick={switchPortion}> Next</span>}
+            {portionAmount > portionNumber && <span onClick={switchPortion}>{nextPageBtn}</span>}
         </div>
     )
 };

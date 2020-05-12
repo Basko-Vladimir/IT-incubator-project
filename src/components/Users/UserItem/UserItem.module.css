@@ -52,15 +52,12 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 10px;
-    padding:10px;
-}
-
-.userItem .userInfo {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 10px;
     padding:10px 20px;
     color: #515365;
+}
+
+.userItem .userInfo div{
+    max-width: 50%;
 }
 
 .userItem .userInfo div:nth-child(even) {
@@ -71,5 +68,10 @@
     font-weight: bolder;
     color: #27AAE1;
 }
+
+.userItem .userInfo .name span {
+    word-wrap: break-word
+}
+
 
 
