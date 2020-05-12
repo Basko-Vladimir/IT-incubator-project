@@ -1,8 +1,10 @@
 import React from "react";
 import styles from "./Header.module.css";
 import earth from "../../images/earthWhite.png";
+import {connect} from "react-redux";
+import {logout} from "../../redux/auth-reducer";
 
-const Header = () => {
+const Header = (props) => {
     return (
         <div className={styles.header}>
             <div className={styles.logoIcon}>
@@ -17,8 +19,11 @@ const Header = () => {
                 <span>French</span>
                 <span>Spanish</span>
             </div>
+            <div className={styles.exit}>
+                <span onClick={props.logout}>Exit</span>
+            </div>
         </div>
     )
 };
 
-export default Header;
+export default connect(null, {logout})(Header);

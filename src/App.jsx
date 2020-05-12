@@ -10,12 +10,12 @@ import Settings from "./components/Settings/Settings";
 // import Dialogs from "./components/Dialogs/Dialogs";
 import UsersContainer from "./components/Users/UsersContainer";
 import ProfileContainer from "./components/Profile/ProfileContainer";
-import LoginFormContainer from "./components/Login/LoginForm/LoginFormContainer";
 import Login from "./components/Login/Login";
 import {connect} from "react-redux";
 import {compose} from "redux";
 import {initializeApp} from "./redux/app-reducer";
 import Preloader from "./components/common/Preloader/Preloader";
+import FriendsContainer from "./components/Friends/FriendsContainer";
 
 const Dialogs = lazy(() => import("./components/Dialogs/Dialogs"));
 
@@ -31,7 +31,6 @@ class App extends React.Component {
         return (
             <div className="App">
                 <Header/>
-                <LoginFormContainer/>
                 <Navbar/>
                 <div className='mainBlockWrap'>
                         <Route path={'/login'} render={() => <Login/>}/>
@@ -47,6 +46,7 @@ class App extends React.Component {
                         <Route path='/music' render={() => <Music/>}/>
                         <Route path='/settings' render={() => <Settings/>}/>
                 </div>
+                <FriendsContainer/>
             </div>
         );
     }

@@ -1,9 +1,9 @@
 import React from "react";
-import styles from "./InterlocutorItem.module.css";
-import avatar from "../../../../images/avatar.jpg";
+import styles from "./FriendsItem.module.css";
+import avatar from "../../../images/avatar.jpg";
 import PropTypes from "prop-types";
 
-const InterlocutorItem = (props) => {
+const FriendsItem = (props) => {
   return (
       <div className={styles.interlocutor}>
           <img className={styles.avatar} src={avatar} alt="avatar"/>
@@ -15,12 +15,12 @@ const InterlocutorItem = (props) => {
   )
 };
 
-export default InterlocutorItem;
+export default FriendsItem;
 
-InterlocutorItem.propTypes = {
+FriendsItem.propTypes = {
     name: PropTypes.string
 };
 
-InterlocutorItem.defaultProps = {
+FriendsItem.defaultProps = {
     name: 'Иван Иванов'
 };

@@ -1,16 +1,14 @@
 import React from "react";
 import {Redirect} from "react-router-dom";
 import {connect} from "react-redux";
+import LoginFormContainer from "./LoginForm/LoginFormContainer";
 
 const Login = (props) => {
     if (props.isAuth){
-        console.log(props.isAuth);
         return <Redirect to={'/profile'}/>
     }
 
-    return (
-        <h1>LOGIN</h1>
-    )
+    return <LoginFormContainer/>
 };
 
 const mapStateToProps = (state) => {

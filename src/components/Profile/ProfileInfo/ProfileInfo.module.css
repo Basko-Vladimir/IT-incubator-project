@@ -2,9 +2,11 @@
     background-color: #ffffff;
     display: grid;
     grid-template-columns: 1fr;
+    grid-gap: 10px;
     border-radius: 5px;
     color:#515365;
     align-content: start;
+    padding-top: 10px;
 }
 
 .profileInfo div{

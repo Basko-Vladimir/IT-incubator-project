@@ -1,15 +1,15 @@
 import React from "react";
-import styles from "./Interlocutors.module.css";
-import InterlocutorItem from "./InterlocutorItem/InterlocutorItem";
+import styles from "./Friends.module.css";
+import FriendsItem from "./InterlocutorItem/FriendsItem";
 import PropTypes from "prop-types";
 
-const Interlocutors = (props) => {
-    let interlocutors = props.dialogs.map(d => <InterlocutorItem key={d.id} name={d.name}/>);
+const Friends = (props) => {
+    let interlocutors = props.dialogs.map(d => <FriendsItem key={d.id} name={d.name}/>);
 
     return (
         <div className={styles.interlocutorsBlock}>
             <div className={styles.interlocutorsHeader}>
-                <span>Interlocutors</span>
+                <span>Friends</span>
             </div>
             <div className={styles.interlocutors}>
                 {interlocutors}
@@ -18,8 +18,8 @@ const Interlocutors = (props) => {
     )
 };
 
-export default Interlocutors;
+export default Friends;
 
-Interlocutors.propTypes = {
+Friends.propTypes = {
     dialogs: PropTypes.array
 };

@@ -11,7 +11,7 @@ const PostCreate = (props) => {
     let userPhoto = props.profilePage.profile.photos.small;
 
     let AddNewPost = (value) => {
-        props.addNewPost(value.newPostText);
+        props.addNewPostAC(value.newPostText);
     };
 
     return(

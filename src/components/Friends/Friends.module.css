@@ -1,4 +1,5 @@
-.interlocutorsBlock{
+.interlocutorsBlock {
+    grid-area: friends;
     background-color: #ffffff;
     border-radius: 5px;
     overflow: auto;

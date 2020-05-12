@@ -2,7 +2,7 @@
     grid-area: header;
     background-color: #3F4257;
     display: grid;
-    grid-template: 100% / 1fr 5fr 3fr;
+    grid-template: 100% / 1fr 5fr 3fr 1fr;
     color: #ffffff;
 }
 
@@ -26,6 +26,18 @@
 .header .language{
     display:grid;
     grid-template: 1fr/1fr 1fr 1fr 1fr 20%;
+    justify-content: center;
+    align-items: center;
+}
+
+.header .language span,
+.header .exit span{
+    cursor: pointer;
+}
+
+
+.header .exit{
+    display:grid;
     justify-content: center;
     align-items: center;
 }
