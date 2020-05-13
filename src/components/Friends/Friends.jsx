@@ -2,10 +2,10 @@ import React from "react";
 import styles from "./Friends.module.css";
 import FriendsItem from "./InterlocutorItem/FriendsItem";
 import PropTypes from "prop-types";
+import {connect} from "react-redux";
 
 const Friends = (props) => {
     let interlocutors = props.dialogs.map(d => <FriendsItem key={d.id} name={d.name}/>);
-
     return (
         <div className={styles.interlocutorsBlock}>
             <div className={styles.interlocutorsHeader}>
@@ -18,7 +18,12 @@ const Friends = (props) => {
     )
 };
 
-export default Friends;
+let mapStateToProps = (state) => {
+    return {
+        dialogs: state.dialogsPage.dialogs
+    }
+};
+export default connect(mapStateToProps)(Friends);
 
 Friends.propTypes = {
     dialogs: PropTypes.array

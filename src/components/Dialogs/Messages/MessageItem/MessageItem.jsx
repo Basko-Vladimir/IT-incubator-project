@@ -1,12 +1,14 @@
 import React from "react";
 import styles from "./MessageItem.module.css";
-import avatar from "../../../../images/avatar.jpg";
 import PropTypes from "prop-types";
+import Avatar from "../../../common/Avatar/Avatar";
 
 const MessageItem = (props) => {
     return(
         <div className={styles.messageBlock}>
-            <img className={styles.avatar} src={avatar} alt="avatar"/>
+            <div className={styles.avatar}>
+                <Avatar/>
+            </div>
             <div className={styles.message}>
                 <div className={styles.messageHeader}>
                     <span className={styles.name}>Иванов Иван</span>

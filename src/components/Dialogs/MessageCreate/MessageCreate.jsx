@@ -1,21 +1,23 @@
 import React from "react";
-import avatar from "../../../images/avatar.jpg";
 import styles from "./MessageCreate.module.css";
 import PropTypes from "prop-types";
 import {Field, reduxForm} from "redux-form";
 import Button from "../../common/Button/Button";
 import {maxLengthCreator, required} from "../../../utilities/validators";
 import {FormElement} from "../../common/FormControl/FormControl";
+import {connect} from "react-redux";
+import {addNewMessage} from "../../../redux/dialogs-reducer";
+import Avatar from "../../common/Avatar/Avatar";
 
 const MessageCreate = (props) => {
-
     let addNewMessage = (value) => {
         props.addNewMessage(value.newMessageText);
     };
-
     return (
         <div className={styles.messageCreate}>
-            <img className={styles.avatar} src={avatar} alt='avatar'/>
+            <div className={styles.avatar}>
+                <Avatar/>
+            </div>
             <MessageCreateFormRedux onSubmit={addNewMessage} />
         </div>
     )
@@ -40,7 +42,7 @@ const MessageCreateForm = (props) => {
 
 const MessageCreateFormRedux = reduxForm({form:'MessageCreateForm'})(MessageCreateForm);
 
-export default MessageCreate;
+export default connect(null, {addNewMessage})(MessageCreate);
 
 MessageCreate.propTypes = {
     newMessageText: PropTypes.string,

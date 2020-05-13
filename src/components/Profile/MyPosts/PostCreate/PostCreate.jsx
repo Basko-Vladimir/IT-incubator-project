@@ -1,23 +1,24 @@
 import React from "react";
 import styles from "./PostCreate.module.css";
-import avatar from "../../../../images/avatar.jpg";
-import PropTypes from "prop-types";
 import {Field, reduxForm} from "redux-form";
 import Button from "../../../common/Button/Button";
 import {maxLengthCreator, required} from "../../../../utilities/validators";
 import {FormElement} from "../../../common/FormControl/FormControl";
+import {connect} from "react-redux";
+import {addNewPost} from "../../../../redux/profile-reducer";
+import Avatar from "../../../common/Avatar/Avatar";
 
 const PostCreate = (props) => {
-    let userPhoto = props.profilePage.profile.photos.small;
-
-    let AddNewPost = (value) => {
-        props.addNewPostAC(value.newPostText);
+    let onAddNewPost = (value) => {
+        props.addNewPost(value.newPostText);
     };
 
     return(
         <div className={styles.postCreate}>
-            <img className={styles.avatar} src={userPhoto ? userPhoto : avatar} alt='avatar'/>
-            <PostCreateFormRedux onSubmit={AddNewPost} />
+            <div className={styles.avatar}>
+                <Avatar userPhoto={props.userPhoto}/>
+            </div>
+            <PostCreateFormRedux onSubmit={onAddNewPost} />
         </div>
     )
 };
@@ -40,11 +41,4 @@ const PostCreateForm = (props) => {
 
 const PostCreateFormRedux = reduxForm({form: 'PostCreateForm'})(PostCreateForm);
 
-export default PostCreate;
-
-PostCreate.propTypes = {
-    newMessageText: PropTypes.string,
-    addNewPost: PropTypes.func,
-    changeMewPostText: PropTypes.func,
-    small: PropTypes.string
-};
+export default connect(null, {addNewPost})(PostCreate);

@@ -15,7 +15,7 @@ import {connect} from "react-redux";
 import {compose} from "redux";
 import {initializeApp} from "./redux/app-reducer";
 import Preloader from "./components/common/Preloader/Preloader";
-import FriendsContainer from "./components/Friends/FriendsContainer";
+import Friends from "./components/Friends/Friends";
 
 const Dialogs = lazy(() => import("./components/Dialogs/Dialogs"));
 
@@ -46,7 +46,7 @@ class App extends React.Component {
                         <Route path='/music' render={() => <Music/>}/>
                         <Route path='/settings' render={() => <Settings/>}/>
                 </div>
-                <FriendsContainer/>
+                <Friends/>
             </div>
         );
     }

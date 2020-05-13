@@ -1,9 +1,9 @@
 import React from "react";
 import styles from "./Post.module.css";
-import avatar from "../../../../images/avatar.jpg";
 import like from "../../../../images/like.png";
 import comment from "../../../../images/comment.png";
 import PropTypes from "prop-types";
+import Avatar from "../../../common/Avatar/Avatar";
 
 
 
@@ -11,7 +11,9 @@ const Post = (props) => {
     return(
         <div className={styles.postBlock}>
             <div className={styles.postHeader}>
-                <img className={styles.avatar} src={avatar} alt='avatar'/>
+                <div className={styles.avatar}>
+                    <Avatar userPhoto={props.userPhoto}/>
+                </div>
                 <div className={styles.name}>
                     <span>Иван Иванов</span>
                 </div>

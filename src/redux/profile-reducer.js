@@ -42,7 +42,7 @@ const profileReducer = (state = initialState, action) => {
     }
 };
 
-export const addNewPostAC = (newPostText) => ({type: ADD_NEW_POST, newPostText});
+export const addNewPost = (newPostText) => ({type: ADD_NEW_POST, newPostText});
 const setUserProfileAC = (userProfile) => ({type: SET_USER_PROFILE, userProfile});
 const setUserStatusAC = (status) => ({type: SET_USER_STATUS, status});
 
@@ -57,7 +57,7 @@ export const setUserStatus = (userId) => async (dispatch) => {
 };
 
 export const updateUserStatus = (status) => async (dispatch) => {
-    const data = profileAPI.updateUserStatus(status);
+    const data = await profileAPI.updateUserStatus(status);
     if (data.resultCode === 0) {
         dispatch(setUserStatusAC(status));
     }

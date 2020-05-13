@@ -1,10 +1,10 @@
 import React from "react";
 import styles from "./Profile.module.css";
-import avatar from "../../images/avatar.jpg";
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
-import MyPostsContainer from "./MyPosts/MyPostsContainer";
 import Preloader from "../common/Preloader/Preloader";
 import ProfileStatusWithHooks from "./ProfileInfo/ProfileStatus/ProfileStatusWithHooks";
+import MyPosts from "./MyPosts/MyPosts";
+import Avatar from "../common/Avatar/Avatar";
 
 const  Profile = (props) => {
     if (!props.profile) {
@@ -22,17 +22,16 @@ const  Profile = (props) => {
                         <span>{props.profile.fullName}</span>
                     </div>
                     <div className={styles.editProfile}>
-                        <input type={'file'} />
+                        <input type={'file'} className={styles.fileInput}/>
                     </div>
                 </div>
-                <img className={styles.avatar} src={props.profile.photos.small
-                    ? props.profile.photos.small : avatar} alt='avatar'/>
+                <div className={styles.avatar}>
+                    <Avatar userPhoto={props.profile.photos.small}/>
+                </div>
             </div>
             <div className={styles.profileBlock}>
-                <MyPostsContainer />
-                <ProfileInfo profile={props.profile}
-                             status={props.status}
-                             updateUserStatus={props.updateUserStatus}/>
+                <MyPosts userPhoto={props.profile.photos.small} posts={props.posts}/>
+                <ProfileInfo profile={props.profile}/>
             </div>
         </div>
     )

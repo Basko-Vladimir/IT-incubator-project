@@ -34,6 +34,10 @@
     justify-self: end;
 }
 
+.profileWrap .bgWrap .headerProfile .editProfile .fileInput{
+
+}
+
 .profileWrap .bgWrap .headerProfile .name{
    position: absolute;
    top:260px;
@@ -48,11 +52,7 @@
     position: absolute;
     left: calc(50% - 60px);
     bottom: 15%;
-    border: 2px #ffffff solid;
-    border-radius: 60px;
     width: 120px;
-    height: 120px;
-    background-color: #d7d7d7;
 }
 
 .profileWrap .profileBlock{

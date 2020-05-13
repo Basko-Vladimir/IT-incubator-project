@@ -1,11 +1,18 @@
 .dialogsWrap{
     display: grid;
     grid-gap: 10px;
+    background-image: url('../../images/cityBG.jpg');
+    background-size: cover;
 }
 
 .dialogsWrap .dialogsBlock{
     display: grid;
     height: calc(100vh - 210px);
-    grid-gap: 10px;
-    grid-template-columns: 5fr 2fr;
+    width: calc(100% - 100px);
+    padding: 20px 50px;
+    margin: 0 auto;
+}
+
+.dialogsWrap .dialogsBlock .avatar{
+    width: 50px;
 }

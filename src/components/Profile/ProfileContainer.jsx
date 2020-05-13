@@ -23,6 +23,7 @@ class ProfileContainer extends React.Component {
         return (
             <Profile profile={this.props.profile}
                      status={this.props.status}
+                     posts={this.props.posts}
                      updateUserStatus={this.props.updateUserStatus}/>
         )
     }
@@ -32,7 +33,8 @@ let mapStateToProps = (state) => {
     return {
         profile: state.profilePage.profile,
         status: state.profilePage.status,
-        authorizedUserId: state.auth.userData.userId
+        authorizedUserId: state.auth.userData.userId,
+        posts: state.profilePage.posts
     }
 };
 

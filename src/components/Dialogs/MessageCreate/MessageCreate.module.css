@@ -1,14 +1,13 @@
 .messageCreate{
     background-color: #ffffff;
     display: grid;
-    grid-template-columns: 1fr 9fr;
-    border-radius: 5px;
+    grid-template-columns: 70px 1fr;
     padding: 10px 25px 10px 25px;
+    width: calc(100% - 50px);
 }
 
 .messageCreate .avatar{
     width: 50px;
-    border-radius: 25px;
     margin-right: 20px;
 }
 

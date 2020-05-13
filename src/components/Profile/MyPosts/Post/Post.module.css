@@ -17,7 +17,6 @@
 .postBlock .postHeader .avatar{
     grid-area: ava;
     width: 50px;
-    border-radius: 25px;
     padding-right: 20px;
 }
 
@@ -34,7 +33,7 @@
 
 .postBlock .postMessage {
     color:#A9ACC0;
-    padding-bottom: 10px;
+    padding: 0 0 10px 10px;
     border-bottom: 1px #E6ECF5 solid;
 }
 
