@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./ProfileHeader.module.css";
-import ProfileStatusWithHooks from "../ProfileInfo/ProfileStatus/ProfileStatusWithHooks";
+import ProfileStatusWithHooks from "../ProfileInfoBlock/ProfileStatus/ProfileStatusWithHooks";
 
 const ProfileHeader = (props) => {
 

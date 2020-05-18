@@ -1,0 +1,26 @@
+.profileInfo{
+    display: grid;
+    grid-template-columns: 1fr;
+    border-radius: 5px;
+    color:#515365;
+    align-content: start;
+    padding-top: 10px;
+}
+
+.profileInfo .editWrap{
+    justify-self: end;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.profileInfo .editWrap .editMode{
+    font-size: 14px;
+}
+
+.profileInfo .contact{
+    padding: 5px 0 0 10px;
+    color: #515365;
+}
+
+
+

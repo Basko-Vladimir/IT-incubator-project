@@ -1,8 +1,8 @@
 import React from "react";
-import styles from "./Info.module.css";
+import styles from "./InfoItem.module.css";
 import PropTypes from "prop-types";
 
-const Info = (props) => {
+const InfoItem = (props) => {
     return(
         <div className={styles.contentBlock}>
             <span className={styles.header}>{props.header}</span>
@@ -11,14 +11,14 @@ const Info = (props) => {
     )
 };
 
-export default Info;
+export default InfoItem;
 
-Info.propTypes = {
+InfoItem.propTypes = {
     header: PropTypes.string,
     content: PropTypes.string
 };
 
-Info.defaultProps = {
+InfoItem.defaultProps = {
     header: 'Header',
     content: 'Content'
 };

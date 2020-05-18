@@ -1,0 +1,11 @@
+.profileInfoForm{
+    display: grid;
+    grid-template-columns: 1fr;
+    border-radius: 5px;
+    color:#515365;
+    align-content: start;
+    padding: 10px 0 0 20px;
+}
+
+
+

@@ -3,6 +3,7 @@
     display: grid;
     grid-template-columns: 1fr;
     font-size: 14px;
+    padding: 5px 20px;
 }
 
 .contentBlock .header{
@@ -12,5 +13,5 @@
 }
 
 .contentBlock .content{
-    color: #A9ACC0;
+    color: #515365;
 }
