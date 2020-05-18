@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./InfoItem.module.css";
-import PropTypes from "prop-types";
+
 
 const InfoItem = (props) => {
     return(
@@ -12,13 +12,3 @@ const InfoItem = (props) => {
 };
 
 export default InfoItem;
-
-InfoItem.propTypes = {
-    header: PropTypes.string,
-    content: PropTypes.string
-};
-
-InfoItem.defaultProps = {
-    header: 'Header',
-    content: 'Content'
-};

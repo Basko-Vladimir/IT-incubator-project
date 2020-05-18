@@ -7,9 +7,12 @@ import InfoItem from "../InfoItem/InfoItem";
 const ProfileInfo = (props) => {
     return (
         <div className={styles.profileInfo}>
-            {props.isOwner && <div className={styles.editWrap} onClick={() => props.setEditMode(true)}>
-                <FontAwesomeIcon icon={faPen} className={styles.editMode}/> Edit
-            </div>}
+            {
+                props.isOwner &&
+                <div onClick={() => props.setEditMode(true)} className={styles.editWrap}>
+                    <FontAwesomeIcon icon={faPen} className={styles.editMode}/> Edit
+                </div>
+            }
             <InfoItem header={"About Me"} content={props.profile.aboutMe ? props.profile.aboutMe: 'Nothing entered'}/>
             <InfoItem header={"Looking for a job"} content={props.profile.lookingForAJob ? 'Yes' : 'No'}/>
             {

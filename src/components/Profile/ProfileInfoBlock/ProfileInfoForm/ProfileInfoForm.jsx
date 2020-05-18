@@ -5,6 +5,7 @@ import handleSubmit from "redux-form/lib/handleSubmit";
 import {reduxForm} from "redux-form";
 
 
+
 const ProfileInfoForm = (props) => {
     return (
         <form onSubmit={handleSubmit}>

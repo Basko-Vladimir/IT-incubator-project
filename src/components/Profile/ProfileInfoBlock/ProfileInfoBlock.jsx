@@ -1,7 +1,8 @@
 import React, {useState} from "react";
 import styles from "./ProfileInfoBlock.module.css";
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
-import ProfileInfoForm from "./ProfileInfoForm/ProfileInfoForm";
+import ProfileInfoReduxForm from "./ProfileInfoForm/ProfileInfoForm";
+
 
 const ProfileInfoBlock = (props) => {
 
@@ -9,7 +10,7 @@ const ProfileInfoBlock = (props) => {
 
     return (
         <div  className={styles.profileInfoBlock}>
-            { editMode ? <ProfileInfoForm />: <ProfileInfo {...props} setEditMode={setEditMode} /> }
+            { editMode ? <ProfileInfoReduxForm/> : <ProfileInfo {...props} setEditMode={setEditMode} /> }
         </div>
     )
 };
