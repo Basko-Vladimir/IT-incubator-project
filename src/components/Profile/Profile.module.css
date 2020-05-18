@@ -16,38 +16,6 @@
     background-size: cover;
 }
 
-.profileWrap .bgWrap .headerProfile{
-    height: 20%;
-    display: grid;
-    grid-template-columns: 300px 3fr;
-    justify-content: space-between;
-    align-items: center;
-    color: #515365;
-    font-weight: bolder;
-}
-
-.profileWrap .bgWrap .headerProfile .status{
-    margin-left: 20px;
-}
-
-.profileWrap .bgWrap .headerProfile .editProfile{
-    justify-self: end;
-}
-
-.profileWrap .bgWrap .headerProfile .editProfile .fileInput{
-
-}
-
-.profileWrap .bgWrap .headerProfile .name{
-   position: absolute;
-   top:260px;
-   left:calc(50% - 150px);
-   font-size: 18px;
-   font-weight: bolder;
-   width: 300px;
-    text-align: center;
-}
-
 .profileWrap .bgWrap .avatar {
     position: absolute;
     left: calc(50% - 60px);
