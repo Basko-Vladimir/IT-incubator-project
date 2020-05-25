@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Profile.module.css";
-import ProfileInfoBlock from "./ProfileInfoBlock/ProfileInfoBlock";
+import ProfileDataBlock from "./ProfileInfoBlock/ProfileDataBlock";
 import Preloader from "../common/Preloader/Preloader";
 import MyPosts from "./MyPosts/MyPosts";
 import Avatar from "../common/Avatar/Avatar";
@@ -26,7 +26,7 @@ const  Profile = (props) => {
             </div>
             <div className={styles.profileBlock}>
                 <MyPosts userPhoto={props.profile.photos.small} posts={props.posts}/>
-                <ProfileInfoBlock profile={props.profile} isOwner={props.isOwner}/>
+                <ProfileDataBlock profile={props.profile} isOwner={props.isOwner} saveProfile={props.saveProfile}/>
             </div>
         </div>
     )

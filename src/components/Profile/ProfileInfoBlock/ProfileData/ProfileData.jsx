@@ -1,12 +1,12 @@
 import React from "react";
-import styles from "./ProfileInfo.module.css";
+import styles from "./ProfileData.module.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPen } from '@fortawesome/free-solid-svg-icons'
-import InfoItem from "../InfoItem/InfoItem";
+import InfoItem from "./InfoItem/InfoItem";
 
-const ProfileInfo = (props) => {
+const ProfileData = (props) => {
     return (
-        <div className={styles.profileInfo}>
+        <div className={styles.profileData}>
             {
                 props.isOwner &&
                 <div onClick={() => props.setEditMode(true)} className={styles.editWrap}>
@@ -15,10 +15,7 @@ const ProfileInfo = (props) => {
             }
             <InfoItem header={"About Me"} content={props.profile.aboutMe ? props.profile.aboutMe: 'Nothing entered'}/>
             <InfoItem header={"Looking for a job"} content={props.profile.lookingForAJob ? 'Yes' : 'No'}/>
-            {
-                props.profile.lookingForAJob && <InfoItem header={"My professional skills"}
-                                                          content={props.profile.lookingForAJobDescription}/>
-            }
+            <InfoItem header={"My professional skills"} content={props.profile.lookingForAJobDescription}/>
             <InfoItem header={"Contacts:"}
                       content={Object.keys(props.profile.contacts).map(key => {
                           return <Contact key={key} title={key} value={props.profile.contacts[key]}/>
@@ -33,7 +30,7 @@ const Contact = ({title, value}) => {
     </div>
 };
 
-export default ProfileInfo;
+export default ProfileData;
 
 
 
