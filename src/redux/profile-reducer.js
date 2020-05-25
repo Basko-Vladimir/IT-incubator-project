@@ -85,7 +85,8 @@ export const saveProfile = (profile) => async (dispatch, getState) => {
         const userId = getState().auth.userData.userId;
         dispatch(setUserProfile(userId))
     } else {
-        dispatch(stopSubmit('edit-profile', {_error: data.data.messages[0]}))
+        console.log(data);
+        dispatch(stopSubmit('edit-profile', {_error: data.data.messages[0]} ))
     }
 };
 

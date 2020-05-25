@@ -9,7 +9,7 @@ const ProfileDataBlock = (props) => {
     const [editMode, setEditMode] = useState(false);
 
     const onSubmit = (formData) => {
-        setEditMode(false);
+        // setEditMode(false);
         props.saveProfile(formData);
     };
 

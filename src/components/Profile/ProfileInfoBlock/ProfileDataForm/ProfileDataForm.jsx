@@ -3,14 +3,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSave} from '@fortawesome/free-solid-svg-icons'
 import {Field, reduxForm} from "redux-form";
 import {FormElement} from "../../../common/FormControl/FormControl";
+import styles from "../../../Login/LoginForm/LoginForm.module.css";
 
 
 
 
-const ProfileDataForm = ({handleSubmit, profile}) => {
-    debugger
+const ProfileDataForm = ({handleSubmit, profile, error}) => {
     return (
         <form onSubmit={handleSubmit}>
+            {error && <div className={styles.formError}>{error}</div> }
             <div>
                 <b>Full name:</b>
                 <Field name={'fullName'} component={FormElement} type={'text'} placeholder={'Full name'}/>
