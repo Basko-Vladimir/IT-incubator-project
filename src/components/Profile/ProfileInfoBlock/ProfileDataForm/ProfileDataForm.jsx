@@ -1,17 +1,15 @@
 import React from "react";
+import styles from "./ProfileDataForm.module.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSave} from '@fortawesome/free-solid-svg-icons'
 import {Field, reduxForm} from "redux-form";
 import {FormElement} from "../../../common/FormControl/FormControl";
-import styles from "../../../Login/LoginForm/LoginForm.module.css";
-
-
-
+import stylesFromLogin from "../../../Login/LoginForm/LoginForm.module.css";
 
 const ProfileDataForm = ({handleSubmit, profile, error}) => {
     return (
-        <form onSubmit={handleSubmit}>
-            {error && <div className={styles.formError}>{error}</div> }
+        <form onSubmit={handleSubmit} className={styles.profileDataForm}>
+            {error && <div className={stylesFromLogin.formError}>{error}</div> }
             <div>
                 <b>Full name:</b>
                 <Field name={'fullName'} component={FormElement} type={'text'} placeholder={'Full name'}/>
@@ -28,18 +26,18 @@ const ProfileDataForm = ({handleSubmit, profile, error}) => {
                 <b>About me:</b>
                 <Field name={'aboutMe'} component={FormElement} type={'textarea'} placeholder={'About me'}/>
             </div>
-            <div>
+            <div className={styles.contacts}>
                 <b>Contacts:</b>
                 {Object.keys(profile.contacts).map(key => {
                     return (
-                        <div key={key}>
+                        <div key={key} className={styles.contactItem}>
                             <b>{key}</b>
                             <Field name={'contacts.' + key} component={FormElement} type={'text'}/>
                         </div>
                     )
                 })}
             </div>
-            <button>
+            <button className={styles.button}>
                 <FontAwesomeIcon icon={faSave}/> Save
             </button>
         </form>

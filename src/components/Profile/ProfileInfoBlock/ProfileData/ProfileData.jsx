@@ -26,7 +26,7 @@ const ProfileData = (props) => {
 
 const Contact = ({title, value}) => {
     return <div className={styles.contact}>
-        <span>{title}: </span>{value}
+        <b>{title}: </b>{value}
     </div>
 };
 

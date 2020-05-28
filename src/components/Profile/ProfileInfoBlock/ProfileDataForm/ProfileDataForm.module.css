@@ -1,4 +1,4 @@
-.profileInfoForm{
+.profileDataForm{
     display: grid;
     grid-template-columns: 1fr;
     border-radius: 5px;
@@ -7,5 +7,28 @@
     padding: 10px 0 0 20px;
 }
 
+.profileDataForm input:not(input[type='checkbox']){
+    height: 20px;
+    margin-top: 5px;
+}
+
+.profileDataForm textarea{
+    resize: none;
+    width: 75%;
+}
+
+.profileDataForm .contacts .contactItem{
+    margin-left: 10px;
+}
+
+.profileDataForm .button{
+    background-color: transparent;
+    border:none;
+    cursor: pointer;
+    margin: 20px 20px 20px 0;
+    justify-self: end;
+    font-size: 14px;
+    color:#515365;
+}
 
 
