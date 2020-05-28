@@ -43,7 +43,7 @@
     justify-self: flex-start;
 }
 
-.loginForm .formError {
+.formError {
     color: red;
 }
 

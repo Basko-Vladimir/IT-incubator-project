@@ -9,8 +9,10 @@ const ProfileDataBlock = (props) => {
     const [editMode, setEditMode] = useState(false);
 
     const onSubmit = (formData) => {
-        // setEditMode(false);
-        props.saveProfile(formData);
+        props.saveProfile(formData)
+            .then(() => {           // так делать не совсем правильно, т.к. должны задиспатчить и забыть
+                setEditMode(false)  // а не ждать промис, правильнее хранить какой-то флаг в редьюсере и менять
+            });                     // локальный стейт при изменении значения этого флага Flux круговорот
     };
 
     return (
