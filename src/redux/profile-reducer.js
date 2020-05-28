@@ -85,7 +85,9 @@ export const saveProfile = (profile) => async (dispatch, getState) => {
         const userId = getState().auth.userData.userId;
         dispatch(setUserProfile(userId))
     } else {
-        dispatch(stopSubmit('edit-profile', {'contacts':{'vk': data.data.messages[0]}} ));
+        const errorText = data.data.messages[0];
+        const contactsType = errorText.match(/\w+/g)[4].toLowerCase();
+        dispatch(stopSubmit('edit-profile', {'contacts':{[contactsType] : data.data.messages[0]}} ));
         return Promise.reject(data.data.messages[0])
     }
 };
