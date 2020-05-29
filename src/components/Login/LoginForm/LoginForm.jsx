@@ -5,7 +5,6 @@ import Button from "../../common/Button/Button";
 import {FormElement} from "../../common/FormControl/FormControl";
 import {required} from "../../../utilities/validators";
 
-
 const Form = (props) => {
     return (
         <form onSubmit={props.handleSubmit} className={styles.loginForm}>
@@ -26,6 +25,16 @@ const Form = (props) => {
                        component={'input'}/> Remember me
             </label>
             { props.error && <div className={styles.formError}>{props.error}</div> }
+            {props.captchaURL && <div>
+                <img src={props.captchaURL} alt="captcha"/>
+                <Field type='text'
+                       component={FormElement}
+                       validate={[required]}
+                       name={'captcha'}
+                       placeholder='Enter symbols from image'/>
+            </div>
+            }
+
             <div>
                 <Button name={'Enter'}/>
             </div>
@@ -38,16 +47,14 @@ const LoginReduxForm = reduxForm({
 })(Form);
 
 const LoginForm = (props) => {
-
     const onSubmit = (data) => {
-        let {email, password, rememberMe} = data;
-        props.login(email, password, rememberMe);
+        let {email, password, rememberMe, captcha} = data;
+        props.login(email, password, rememberMe, captcha);
     };
-
     return (
         <div className={styles.loginFormWrap}>
             <h3 className={styles.header}>Authorization</h3>
-            <LoginReduxForm onSubmit={onSubmit}/>
+            <LoginReduxForm onSubmit={onSubmit} captchaURL={props.captchaURL}/>
         </div>
     )
 };

@@ -7,13 +7,13 @@ import LoginAuth from "../LoginAuth/LoginAuth";
 
 class LoginFormContainer extends React.Component {
     render() {
-        let {isAuth, userData, login, logout} = this.props;
+        let {isAuth, userData, login, logout, captchaURL} = this.props;
         return (
             <div className={styles.loginWrap}>
                 {
                     isAuth
                     ? <LoginAuth userData={userData} logout={logout}/>
-                    : <LoginForm login={login}/>
+                    : <LoginForm login={login} captchaURL={captchaURL}/>
                 }
             </div>
         )
@@ -23,6 +23,7 @@ class LoginFormContainer extends React.Component {
 const mapStateToProps = (state) => {
     return {
         userData: state.auth.userData,
+        captchaURL: state.auth.captchaURL,
         isAuth: state.auth.userData.isAuth
     }
 };
